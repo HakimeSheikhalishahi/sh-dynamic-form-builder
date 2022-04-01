@@ -35,7 +35,7 @@ export class FormArrayComponent implements OnInit {
     this.formArray.removeAt(i);
   }
   public addform() {
-    const formArrayField = this.field.formArray?.field;
+    const formArrayField = this.field.formArray?.fields;
     if (formArrayField?.length) {
       const form: FormGroup = this.formService.setArrayItem(formArrayField)
       this.formArray.push(form);

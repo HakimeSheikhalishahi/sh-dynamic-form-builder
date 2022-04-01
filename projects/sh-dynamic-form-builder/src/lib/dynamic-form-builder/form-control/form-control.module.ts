@@ -8,6 +8,7 @@ import { InputComponent } from './input/input.component';
 import { RadioComponent } from './radio/radio.component';
 import { RangeComponent } from './range/range.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PasswordComponent } from './password/password.component';
 
 const DECLARATIONS = [
   CheckboxComponent,
@@ -16,12 +17,13 @@ const DECLARATIONS = [
   RadioComponent,
   InputComponent,
   DateComponent,
-  RangeComponent
+  RangeComponent,
+  PasswordComponent
 ]
 
 @NgModule({
   declarations: [
-    DECLARATIONS
+    DECLARATIONS,
   ],
   imports: [
     CommonModule,

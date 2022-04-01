@@ -7,7 +7,7 @@ export interface IMainFieldItem extends IFieldItem {
     /** Usable for formArray type */
     formArray?: {
         /**Define field for form array */
-        field: IFormArrayFieldItem[];
+        fields: IFormArrayFieldItem[];
         /**Button without text, default is false */
         simpleAddButton?: boolean;
         /**Set add Button background color, Default is gray */

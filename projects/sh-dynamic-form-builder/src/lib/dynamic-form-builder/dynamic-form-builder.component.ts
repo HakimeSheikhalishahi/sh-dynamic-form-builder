@@ -74,7 +74,7 @@ export class DynamicFormBuilderComponent implements OnInit {
   }
   public addform(field: IMainFieldItem) {
     const formArray = this.formGroup?.get(field?.name) as FormArray;
-    const formArrayField = field.formArray?.field;
+    const formArrayField = field.formArray?.fields;
     if (formArrayField?.length) {
       const form: FormGroup = this.formService.setArrayItem(formArrayField)
       formArray.push(form);

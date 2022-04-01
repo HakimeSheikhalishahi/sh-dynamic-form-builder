@@ -8,7 +8,7 @@
         <app-input *ngSwitchCase="'text'" [field]="field" [form]="form"></app-input>
         <app-range *ngSwitchCase="'range'" [field]="field" [form]="form"></app-range>
         <app-input *ngSwitchCase="'number'" [field]="field" [form]="form"></app-input>
-        <app-input *ngSwitchCase="'password'" [field]="field" [form]="form"></app-input>
+        <lib-password *ngSwitchCase="'password'" [field]="field" [form]="form"></lib-password>
         <app-input *ngSwitchCase="'color'" [field]="field" [form]="form"></app-input>
         <app-dropdown *ngSwitchCase="'dropdown'" [field]="field" [form]="form"></app-dropdown>
         <app-radio *ngSwitchCase="'radio'" [field]="field" [form]="form"></app-radio>
@@ -23,7 +23,7 @@
             <div class="alert alert-danger my-1 p-2 fadeInDown animated"
                 *ngIf="!control.valid && (control.dirty || control.touched)" [style.width.px]="field.width || '100%'">
                 <ng-container *ngFor="let err of field.validators">
-                    <ng-container *ngIf="form.get(field.name)?.getError(err.key)">
+                    <ng-container *ngIf="form.get(field.name)?.getError(err.rule)">
                         {{err.msg}}
                     </ng-container>
                 </ng-container>

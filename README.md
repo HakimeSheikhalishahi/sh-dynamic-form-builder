@@ -23,7 +23,9 @@ npm install @sh-dynamic-form-builder
 ```bash
 npm install bootstrap --save
 ```
-
+```bash
+npm install bootstrap-icons --save
+```
 ```bash
 npm install sh-ordinal-numbers --save
 ```
@@ -46,7 +48,8 @@ export class AppModule { }
 ```json
 "styles": [
     "src/styles.scss",
-    "./node_modules/bootstrap/scss/bootstrap.scss"
+    "./node_modules/bootstrap/scss/bootstrap.scss",
+    "./node_modules/bootstrap-icons/font/bootstrap-icons.scss"
 ]
 ```
 

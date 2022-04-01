@@ -7,12 +7,19 @@ import { IMainFieldItem } from '../model/main-field-item.interface';
   providedIn: 'root'
 })
 export class FormService {
-
+  btnColor = {
+    gray: 'btn-secondary',
+    green: 'btn-success',
+    blue: 'btn-primary',
+    orange: 'btn-warning',
+    light: 'btn-light',
+    dark: 'btn-dark'
+  }
   constructor() { }
   setField(field: IMainFieldItem, formGroup: FormGroup) {
     const validatorArr: any[] = [];
     field.validators?.forEach(val => {
-      switch (val.key) {
+      switch (val.rule) {
         case 'min':
           validatorArr.push(
             Validators.min(+val.value)

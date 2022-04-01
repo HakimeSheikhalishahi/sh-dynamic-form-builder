@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
-import { BtnColor } from '../../shared/enum/btn-color.enum';
 import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
 import { ErrorService } from '../../shared/service/error.service';
 import { FormService } from '../../shared/service/form.service';
@@ -29,7 +28,7 @@ export class FormArrayComponent implements OnInit {
   private setAddButtonBgColor(): void {
     const bgColor = this.field.formArray?.addButtonBGColor;
     if (bgColor) {
-      this.addButtonBgColor = BtnColor[bgColor];
+      this.addButtonBgColor = this.formService.btnColor[bgColor];
     }
   }
   public removeform(i: number) {

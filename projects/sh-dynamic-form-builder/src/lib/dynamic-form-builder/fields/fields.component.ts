@@ -14,7 +14,7 @@ export class FieldsComponent {
   get control(): FormControl {
     return this.form?.controls[this.field?.name] as FormControl;
   }
-  get required() { return this.field?.validators?.some(x => x.key == 'required') };
+  get required() { return this.field?.validators?.some(x => x.rule == 'required') };
   constructor() {
   }
 }

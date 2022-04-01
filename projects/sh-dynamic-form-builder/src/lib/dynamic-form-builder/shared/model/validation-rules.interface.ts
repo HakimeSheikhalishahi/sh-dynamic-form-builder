@@ -1,5 +1,5 @@
-export interface IValidatorRole {
-    key:
+export interface IValidationRules {
+    rule:
     | 'min'
     | 'max'
     | 'pattern'
@@ -7,6 +7,8 @@ export interface IValidatorRole {
     | 'required'
     | 'minlength'
     | 'maxlength';
+    /**Usable for min, max,pattern,minlength and maxlength rules */
     value?: any;
+    /**Error message */
     msg: string;
 }

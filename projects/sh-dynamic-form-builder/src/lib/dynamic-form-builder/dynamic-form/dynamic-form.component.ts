@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { IMainFieldItem } from '../shared/model/main-field-item.interface';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -7,7 +8,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./dynamic-form.component.scss']
 })
 export class DynamicFormComponent implements OnInit {
-  @Input() fields: any[] = [];
+  @Input() fields: IMainFieldItem[] = [];
   @Input() formGroup!: FormGroup ;
   constructor() { }
 

@@ -1,13 +1,13 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { BtnColor } from './shared/enum/btn-color.enum';
+import { ButtonType } from './shared/enum/button-type.enum';
 import { IButton } from './shared/model/button.interface';
 import { IGroupItem } from './shared/model/group-item.interface';
 import { IMainFieldItem } from './shared/model/main-field-item.interface';
 import { ErrorService } from './shared/service/error.service';
 import { FormService } from './shared/service/form.service';
 @Component({
-  selector: 'app-dynamic-form-builder',
+  selector: 'sh-dynamic-form-builder',
   templateUrl: './dynamic-form-builder.component.html',
   styleUrls: ['./dynamic-form-builder.component.scss']
 })
@@ -16,8 +16,12 @@ export class DynamicFormBuilderComponent implements OnInit {
   @Output() cancel: EventEmitter<boolean> = new EventEmitter();
   @Input() group!: IGroupItem;
   @Input() formValue: any = {};
+  @Input() isSubmit: boolean = false;
   get btnColor() {
-    return BtnColor;
+    return this.formService.btnColor;
+  }
+  get buttonType() {
+    return ButtonType;
   }
   componentName = 'formBuilder'
   public formGroup!: FormGroup;
@@ -78,24 +82,6 @@ export class DynamicFormBuilderComponent implements OnInit {
       this.errorService.formArrayField(field.name);
     }
   }
-  // onUpload(e: HTMLInputElement) {
-  //   if (e.files) {
-  //     this.onFileChanged(e.files);
-  //   }
-  // }
-  // onFileChanged(files: FileList) {
-  //   if (files.length === 0)
-  //     return;
-  //   const mimeType = files[0].type;
-  //   if (mimeType.match(/image\/*/) == null) {
-  //     return;
-  //   }
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(files[0]);
-  //   reader.onload = (_event) => {
-  //     this.url = reader.result;
-  //   }
-  // }
   public click(btn: IButton): void {
     switch (btn.type) {
       case 'submit':
@@ -112,6 +98,10 @@ export class DynamicFormBuilderComponent implements OnInit {
     }
   }
   public submitClick(): void {
+    if(!this.formGroup.valid){
+      this.formGroup.markAllAsTouched();
+      return;
+    }
     this.submit.emit(this.formGroup);
   }
   public resetClick(): void {

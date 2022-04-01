@@ -1,10 +1,8 @@
-res is={{formGroup?.value|json}}
-
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1 *ngIf="group.title" [class]="group.titleClass">{{group.title}}</h1>
-            <app-dynamic-form [formGroup]="formGroup" [fields]="group.fields">
+            <h1 *ngIf="group?.title" [class]="group.titleClass">{{group?.title}}</h1>
+            <app-dynamic-form *ngIf="group?.fields" [formGroup]="formGroup" [fields]="group.fields">
             </app-dynamic-form>
         </div>
     </div>
@@ -21,7 +19,8 @@ res is={{formGroup?.value|json}}
 </div>
 <ng-template #buttons>
     <ng-container *ngFor="let btn of group?.buttonSetting?.buttons">
-        <button class="btn btn-block margin" [class]="btnColor[btn.bgColor]" type="button" (click)="click(btn)">
+        <button class="btn btn-block margin" [class]="btnColor[btn.bgColor]"
+            [disabled]="isSubmit && btn.type==buttonType.Submit" type="button" (click)="click(btn)">
             {{btn.caption}}
         </button>
     </ng-container>

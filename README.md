@@ -10,6 +10,7 @@
 - [Quick start](#quick-start)
 - [Field properties](#field-properties)
 - [Import style and icon](#import-style-and-icon)
+- [License](#license)
 
 # Install
  
@@ -50,3 +51,9 @@ export class AppModule { }
 ```
 
 # Field properties
+
+
+## License
+
+MIT
+

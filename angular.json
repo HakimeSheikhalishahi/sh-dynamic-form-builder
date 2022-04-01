@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "shDynamicFormBuilder": {
+      "projectType": "library",
+      "root": "projects/sh-dynamic-form-builder",
+      "sourceRoot": "projects/sh-dynamic-form-builder/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sh-dynamic-form-builder/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sh-dynamic-form-builder/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sh-dynamic-form-builder/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/sh-dynamic-form-builder/src/test.ts",
+            "tsConfig": "projects/sh-dynamic-form-builder/tsconfig.spec.json",
+            "karmaConfig": "projects/sh-dynamic-form-builder/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "shDynamicFormBuilder"
+}

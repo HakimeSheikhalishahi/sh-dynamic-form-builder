@@ -1,0 +1,28 @@
+res is={{formGroup?.value|json}}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1 *ngIf="group.title" [class]="group.titleClass">{{group.title}}</h1>
+            <app-dynamic-form [formGroup]="formGroup" [fields]="group.fields">
+            </app-dynamic-form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col my-1">
+            <div *ngIf="!group?.buttonSetting?.fullWidthButtons" class="d-flex flex-row" [class]="buttonsAlign">
+                <ng-container *ngTemplateOutlet="buttons"></ng-container>
+            </div>
+            <div *ngIf="group?.buttonSetting?.fullWidthButtons" class="d-grid gap-2">
+                <ng-container *ngTemplateOutlet="buttons"></ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #buttons>
+    <ng-container *ngFor="let btn of group?.buttonSetting?.buttons">
+        <button class="btn btn-block margin" [class]="btnColor[btn.bgColor]" type="button" (click)="click(btn)">
+            {{btn.caption}}
+        </button>
+    </ng-container>
+</ng-template>

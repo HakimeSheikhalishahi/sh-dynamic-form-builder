@@ -1,0 +1,35 @@
+<div class="form-group row" [formGroup]="form">
+    <h6 class="form-control-label">
+        {{field?.label}}
+    </h6>
+    <div class="col-12">
+        <div [formArrayName]="formArrayName">
+            <div *ngFor="let control of formArray.controls; let i=index">
+                <div [formGroupName]="i">
+                    <app-divider [field]="field" [counter]="i"></app-divider>
+                    <div class="text-end del-btn">
+                        <i class="bi bi-x-lg text-danger" (click)="removeform(i)"></i>
+                    </div>
+                    <div class="form-group row">
+                        <ng-container *ngFor="let field of field.formArray?.field">
+                            <div class="" [ngSwitch]="field?.type">
+                                <app-form-array-item [field]="field" [form]="control"></app-form-array-item>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button *ngIf="field.formArray?.simpleAddButton" class="btn mt-2" [class]="addButtonBgColor" type="button"
+    (click)="addform()">
+    <i class="bi bi-plus"></i>
+</button>
+<button *ngIf="!field.formArray?.simpleAddButton" class="btn mt-2" type="button" [class]="addButtonBgColor"
+    (click)="addform()">
+    Add
+    <span *ngIf="formArray?.controls?.length"> more</span>
+    {{field?.label}}
+    <i class="bi bi-plus"></i>
+</button>

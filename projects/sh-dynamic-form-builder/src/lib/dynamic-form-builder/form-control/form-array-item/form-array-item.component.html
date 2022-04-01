@@ -1,0 +1,32 @@
+<div class="form-group">
+    <label class="form-label" [attr.for]="field?.label">
+        {{field?.label}}
+        <strong class="text-danger" *ngIf="required">*</strong>
+    </label>
+    <div class="" [ngSwitch]="field?.type">
+        <app-input *ngSwitchCase="'text'" [field]="field" [form]="form"></app-input>
+        <app-range *ngSwitchCase="'range'" [field]="field" [form]="form"></app-range>
+        <app-input *ngSwitchCase="'number'" [field]="field" [form]="form"></app-input>
+        <app-input *ngSwitchCase="'password'" [field]="field" [form]="form"></app-input>
+        <app-input *ngSwitchCase="'color'" [field]="field" [form]="form"></app-input>
+        <app-dropdown *ngSwitchCase="'dropdown'" [field]="field" [form]="form"></app-dropdown>
+        <app-radio *ngSwitchCase="'radio'" [field]="field" [form]="form"></app-radio>
+        <app-checkbox *ngSwitchCase="'checkbox'" [field]="field" [form]="form"></app-checkbox>
+        <app-file *ngSwitchCase="'file'" [field]="field" [form]="form"></app-file>
+        <app-date *ngSwitchCase="'date'" [field]="field" [form]="form"></app-date>
+        <app-date *ngSwitchCase="'datetime-local'" [field]="field" [form]="form"></app-date>
+        <app-date *ngSwitchCase="'time'" [field]="field" [form]="form"></app-date>
+        <app-date *ngSwitchCase="'week'" [field]="field" [form]="form"></app-date>
+        <app-date *ngSwitchCase="'month'" [field]="field" [form]="form"></app-date>
+        <ng-container>
+            <div class="alert alert-danger my-1 p-2 fadeInDown animated"
+                *ngIf="!control.valid && (control.dirty || control.touched)" [style.width.px]="field.width || '100%'">
+                <ng-container *ngFor="let err of field.validators">
+                    <ng-container *ngIf="form.get(field.name)?.getError(err.key)">
+                        {{err.msg}}
+                    </ng-container>
+                </ng-container>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
 
 @Component({
-  selector: 'app-range',
+  selector: 'lib-range',
   templateUrl: './range.component.html',
   styleUrls: ['./range.component.scss']
 })

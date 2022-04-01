@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
 
 @Component({
-  selector: 'app-date',
+  selector: 'lib-date',
   templateUrl: './date.component.html',
   styleUrls: ['./date.component.scss']
 })

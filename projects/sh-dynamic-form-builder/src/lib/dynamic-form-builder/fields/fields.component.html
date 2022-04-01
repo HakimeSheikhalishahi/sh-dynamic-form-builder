@@ -4,21 +4,21 @@
         <strong class="text-danger" *ngIf="required">*</strong>
     </label>
     <div class="" [ngSwitch]="field?.type">
-        <app-form-array *ngSwitchCase="'form-array'" [field]="field" [form]="form"></app-form-array>
-        <app-input *ngSwitchCase="'text'" [field]="field" [form]="form"></app-input>
-        <app-range *ngSwitchCase="'range'" [field]="field" [form]="form"></app-range>
-        <app-input *ngSwitchCase="'number'" [field]="field" [form]="form"></app-input>
+        <lib-form-array *ngSwitchCase="'form-array'" [field]="field" [form]="form"></lib-form-array>
+        <lib-input *ngSwitchCase="'text'" [field]="field" [form]="form"></lib-input>
+        <lib-range *ngSwitchCase="'range'" [field]="field" [form]="form"></lib-range>
+        <lib-input *ngSwitchCase="'number'" [field]="field" [form]="form"></lib-input>
         <lib-password *ngSwitchCase="'password'" [field]="field" [form]="form"></lib-password>
-        <app-input *ngSwitchCase="'color'" [field]="field" [form]="form"></app-input>
-        <app-dropdown *ngSwitchCase="'dropdown'" [field]="field" [form]="form"></app-dropdown>
-        <app-radio *ngSwitchCase="'radio'" [field]="field" [form]="form"></app-radio>
-        <app-checkbox *ngSwitchCase="'checkbox'" [field]="field" [form]="form"></app-checkbox>
-        <app-file *ngSwitchCase="'file'" [field]="field" [form]="form"></app-file>
-        <app-date *ngSwitchCase="'date'" [field]="field" [form]="form"></app-date>
-        <app-date *ngSwitchCase="'datetime-local'" [field]="field" [form]="form"></app-date>
-        <app-date *ngSwitchCase="'time'" [field]="field" [form]="form"></app-date>
-        <app-date *ngSwitchCase="'week'" [field]="field" [form]="form"></app-date>
-        <app-date *ngSwitchCase="'month'" [field]="field" [form]="form"></app-date>
+        <lib-input *ngSwitchCase="'color'" [field]="field" [form]="form"></lib-input>
+        <lib-dropdown *ngSwitchCase="'dropdown'" [field]="field" [form]="form"></lib-dropdown>
+        <lib-radio *ngSwitchCase="'radio'" [field]="field" [form]="form"></lib-radio>
+        <lib-checkbox *ngSwitchCase="'checkbox'" [field]="field" [form]="form"></lib-checkbox>
+        <lib-file *ngSwitchCase="'file'" [field]="field" [form]="form"></lib-file>
+        <lib-date *ngSwitchCase="'date'" [field]="field" [form]="form"></lib-date>
+        <lib-date *ngSwitchCase="'datetime-local'" [field]="field" [form]="form"></lib-date>
+        <lib-date *ngSwitchCase="'time'" [field]="field" [form]="form"></lib-date>
+        <lib-date *ngSwitchCase="'week'" [field]="field" [form]="form"></lib-date>
+        <lib-date *ngSwitchCase="'month'" [field]="field" [form]="form"></lib-date>
         <ng-container *ngIf="field?.type!=='form-array'">
             <div class="alert alert-danger my-1 p-2 fadeInDown animated"
                 *ngIf="!control.valid && (control.dirty || control.touched)" [style.width.px]="field.width || '100%'">

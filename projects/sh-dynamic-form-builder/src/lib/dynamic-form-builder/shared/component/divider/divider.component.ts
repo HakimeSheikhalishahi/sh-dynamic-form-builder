@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IMainFieldItem } from '../../model/main-field-item.interface';
 
 @Component({
-  selector: 'app-divider',
+  selector: 'lib-divider',
   templateUrl: './divider.component.html',
   styleUrls: ['./divider.component.scss']
 })

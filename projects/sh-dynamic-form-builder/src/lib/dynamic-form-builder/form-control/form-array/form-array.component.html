@@ -6,14 +6,14 @@
         <div [formArrayName]="formArrayName">
             <div *ngFor="let control of formArray.controls; let i=index">
                 <div [formGroupName]="i">
-                    <app-divider *ngIf="!field?.formArray?.suppressDividerLine" [field]="field" [counter]="i"></app-divider>
+                    <lib-divider *ngIf="!field?.formArray?.suppressDividerLine" [field]="field" [counter]="i"></lib-divider>
                     <div class="text-end del-btn">
                         <i class="bi bi-x-lg text-danger" (click)="removeform(i)"></i>
                     </div>
                     <div class="form-group row">
                         <ng-container *ngFor="let field of field.formArray?.fields">
                             <div class="" [ngSwitch]="field?.type">
-                                <app-form-array-item [field]="field" [form]="control"></app-form-array-item>
+                                <lib-form-array-item [field]="field" [form]="control"></lib-form-array-item>
                             </div>
                         </ng-container>
                     </div>

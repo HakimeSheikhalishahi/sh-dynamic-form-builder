@@ -4,7 +4,7 @@ import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
 import { ErrorService } from '../../shared/service/error.service';
 import { FormService } from '../../shared/service/form.service';
 @Component({
-  selector: 'app-form-array',
+  selector: 'lib-form-array',
   templateUrl: './form-array.component.html',
   styleUrls: ['./form-array.component.scss']
 })

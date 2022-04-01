@@ -4,7 +4,7 @@ import { IFieldItem } from '../../shared/model/field-item.interface';
 import { ErrorService } from '../../shared/service/error.service';
 
 @Component({
-  selector: 'app-file',
+  selector: 'lib-file',
   templateUrl: './file.component.html',
   styleUrls: ['./file.component.scss']
 })

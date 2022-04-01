@@ -4,7 +4,7 @@ import { IFieldItem } from '../../shared/model/field-item.interface';
 import { ErrorService } from '../../shared/service/error.service';
 
 @Component({
-  selector: 'app-radio',
+  selector: 'lib-radio',
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss']
 })

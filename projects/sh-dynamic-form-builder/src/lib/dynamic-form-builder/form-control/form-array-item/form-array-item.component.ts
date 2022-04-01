@@ -3,7 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { IFormArrayFieldItem } from '../../shared/model/form-array-field-item.interface';
 
 @Component({
-  selector: 'app-form-array-item',
+  selector: 'lib-form-array-item',
   templateUrl: './form-array-item.component.html',
   styleUrls: ['./form-array-item.component.scss']
 })

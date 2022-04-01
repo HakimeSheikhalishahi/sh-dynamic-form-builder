@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { IFieldItem } from '../../shared/model/field-item.interface';
 
 @Component({
-  selector: 'app-dropdown',
+  selector: 'lib-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })

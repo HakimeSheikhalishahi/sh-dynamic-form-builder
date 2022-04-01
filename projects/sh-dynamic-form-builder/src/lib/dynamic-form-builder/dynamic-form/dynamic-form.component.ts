@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { IMainFieldItem } from '../shared/model/main-field-item.interface';
 
 @Component({
-  selector: 'app-dynamic-form',
+  selector: 'lib-dynamic-form',
   templateUrl: './dynamic-form.component.html',
   styleUrls: ['./dynamic-form.component.scss']
 })

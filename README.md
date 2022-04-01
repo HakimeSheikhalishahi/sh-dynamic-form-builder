@@ -1,27 +1,62 @@
-# ShDynamicFormBuilder
+<h2 align="center">Dynamic Form Builder for Angular</h2>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+<p align="center">
+ generate form controls and form array.
+ </p>
+ 
+ ## Table of contents
+ 
+- [Install](#install)
+- [Quick start](#quick-start)
+- [Field properties](#field-properties)
+- [Import style and icon](#import-style-and-icon)
+- [License](#license)
 
-## Development server
+# Install
+ 
+ ```bash
+npm install @sh-dynamic-form-builder
+```
+## Install dependencies
+<p>Use bootstrap V5</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm install bootstrap --save
+```
+```bash
+npm install bootstrap-icons --save
+```
+```bash
+npm install sh-ordinal-numbers --save
+```
+# Quick start
 
-## Code scaffolding
+```typescript
+import { DynamicFormBuilderModule } from 'sh-dynamic-form-builder';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+      imports: [DynamicFormBuilderModule],
+})
+export class AppModule { }
+```
+# Import style and icon
+## In styles.scss
+```css
+@import "~bootstrap-icons/font/bootstrap-icons";
+```
+## In angular.json
+```json
+"styles": [
+    "src/styles.scss",
+    "./node_modules/bootstrap/scss/bootstrap.scss",
+    "./node_modules/bootstrap-icons/font/bootstrap-icons.scss"
+]
+```
 
-## Build
+# Field properties
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## License
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+MIT
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -65,20 +65,20 @@ export class AppModule {}
 
 # Input
 
-| Name      | Type      | Default | Required? | Description                                                                                                                                                                                      |
-| --------- | --------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| config    | `IConfig` | `-`     | yes       | [Config](#config)                                                                                                                                                                                |
-| formValue | `object`  | `{}`    | -         | Adjust form values                                                                                                                                                                               |
-| isSubmit  | `boolean` | `false` | no        | Set in to your Submit Function. If it sets true, Submit button will be disabled.When submit is clicked it must be set "true" value, when sending data will be ended it must be set "false" value |
+| Name      | Type          | Default | Required? | Description                                                                                                                                                                                        |
+| --------- | ------------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| config    | `IFormConfig` | `-`     | yes       | [Config](#config)                                                                                                                                                                                  |
+| formValue | `object`      | `{}`    | -         | Adjust form values                                                                                                                                                                                 |
+| isSubmit  | `boolean`     | `false` | no        | Set in to your Submit Function. If it sets "true", Submit button will be disabled.When submit is clicked it must be set "true" value, when sending data will be ended it must be set "false" value |
 
 # Config
 
-| Name          | Type             | Default | Required? | Description                                                                                                     |
-| ------------- | ---------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
-| fields        | `IMainFieldItem` | `-`     | yes       | Form [Fields](#fields)                                                                                          |
-| title         | `string`         | `-`     | no        | Form title                                                                                                      |
-| titleClass    | `string`         | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class1 class1' |
-| buttonSetting | `IButtonSetting` | `{}`    | yes       | [Button setting](#button-setting)                                                                               |
+| Name                             | Type             | Default | Required? | Description                                                                                                     |
+| -------------------------------- | ---------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
+| [Fields](#fields)                | `IMainFieldItem` | `-`     | yes       | Form fields                                                                                                     |
+| title                            | `string`         | `-`     | no        | Form title                                                                                                      |
+| titleClass                       | `string`         | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class1 class1' |
+| [buttonSetting](#button-setting) | `IButtonSetting` | `{}`    | yes       | Button setting                                                                                                  |
 
 # Output
 
@@ -89,16 +89,16 @@ export class AppModule {}
 
 # Field properties and methods
 
-| Name         | Type               | Default | Required? | Description                                                                                                                                   |
-| ------------ | ------------------ | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| type         | `string`           | `-`     | yes       | Allowed values: text, range, number, password, color, dropdown, radio, checkbox, file, date, datetime-local, time, week, month and form-array |
-| name         | `string`           | `-`     | yes       | Form control name                                                                                                                             |
-| defaultValue | `any`              | `-`     | no        | Form control default value                                                                                                                    |
-| placeholder  | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                                         |
-| [validators] | `IValidationRules` | `-`     | no        | [validators](#Validators)                                                                                                                     |
-| id           | `string`           | `-`     | no        | Element id                                                                                                                                    |
-| width        | `number`           | `100%`  | no        | Width of Control                                                                                                                              |
-| disable      | `boolean`          | `false` | no        | Disable control                                                                                                                               |
+| Name                        | Type               | Default | Required? | Description                                                                                                                                   |
+| --------------------------- | ------------------ | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| type                        | `string`           | `-`     | yes       | Allowed values: text, range, number, password, color, dropdown, radio, checkbox, file, date, datetime-local, time, week, month and form-array |
+| name                        | `string`           | `-`     | yes       | Form control name                                                                                                                             |
+| defaultValue                | `any`              | `-`     | no        | Form control default value                                                                                                                    |
+| placeholder                 | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                                         |
+| [[validators]](#Validators) | `IValidationRules` | `-`     | no        | Set validator rules and error messages                                                                                                              |
+| id                          | `string`           | `-`     | no        | Element id                                                                                                                                    |
+| width                       | `number`           | `100%`  | no        | Width of Control                                                                                                                              |
+| disable                     | `boolean`          | `false` | no        | Disable control                                                                                                                               |
 
 - ## File
 
@@ -140,11 +140,11 @@ export class AppModule {}
 
 # Button setting
 
-| Name             | Type      | Default | Required? | Description                                           |
-| ---------------- | --------- | ------- | --------- | ----------------------------------------------------- |
+| Name             | Type      | Default | Required? | Description                                                     |
+| ---------------- | --------- | ------- | --------- | --------------------------------------------------------------- |
 | [buttons]        | IButton   | `[]`    | yes       | The array of [Buttons](#button-properties), order by definition |
-| buttonsAlign     | `string`  | `left`  | no        | Usable when fullWidthButtons is false                 |
-| fullWidthButtons | `boolean` | `false` | no        | Buttons fill the entire width of the container.       |
+| buttonsAlign     | `string`  | `left`  | no        | Usable when fullWidthButtons is false                           |
+| fullWidthButtons | `boolean` | `false` | no        | Buttons fill the entire width of the container.                 |
 
 - # Button properties
 

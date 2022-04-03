@@ -146,7 +146,7 @@ export class AppModule {}
 | buttonsAlign     | `string`  | `left`  | no        | Usable when fullWidthButtons is false                 |
 | fullWidthButtons | `boolean` | `false` | no        | Buttons fill the entire width of the container.       |
 
-# Button properties
+- # Button properties
 
 | Name    | Type     | Required? | Description                                            |
 | ------- | -------- | --------- | ------------------------------------------------------ |

@@ -142,7 +142,7 @@ export class AppModule {}
 
 | Name             | Type      | Default | Required? | Description                                           |
 | ---------------- | --------- | ------- | --------- | ----------------------------------------------------- |
-| [buttons]        | IButton   | `[]`    | yes       | The array of [Buttons](#buttons), order by definition |
+| [buttons]        | IButton   | `[]`    | yes       | The array of [Buttons](#button-properties), order by definition |
 | buttonsAlign     | `string`  | `left`  | no        | Usable when fullWidthButtons is false                 |
 | fullWidthButtons | `boolean` | `false` | no        | Buttons fill the entire width of the container.       |
 

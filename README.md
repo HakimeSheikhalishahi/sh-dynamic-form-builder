@@ -63,33 +63,68 @@ export class AppModule {}
 ]
 ```
 
-# Field properties
+# Field properties and method
 
-| Name | Type   | Required? | Description                                                                                                                |
-| ---- | ------ | --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| type | string | true      | text, range, number, password, color, dropdown, radio, checkbox, file, date, datetime-local, time, week, month, form-array |
-| name | string | true      | Form control name                                                                                                          |
+| Name         | Type               | Default | Required? | Description                                                                                                                |
+| ------------ | ------------------ | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| type         | `string`           | `-`     | yes       | text, range, number, password, color, dropdown, radio, checkbox, file, date, datetime-local, time, week, month, form-array |
+| name         | `string`           | `-`     | yes       | Form control name                                                                                                          |
+| defaultValue | `any`              | `-`     | no        | Form control default value                                                                                                 |
+| placeholder  | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                      |
+| [validators] | `IValidationRules` | `-`     | no        | [validators](#Validators)                                                                                                  |
+| id           | `string`           | `-`     | no        | Element id                                                                                                                 |
+| width        | `number`           | `100%`  | no        | Width of Control                                                                                                           |
+| disable      | `boolean`          | false   | no        | Disable control                                                                                                            |
+
+- ## File
+
+  | Name         | Type    | Default | Required? | Description                |
+  | ------------ | ------- | ------- | --------- | -------------------------- |
+  | onUpload     | `void`  | `-`     | yes       | File selection event       |
+  | multipleFile | boolean | `false` | no        | Allow choice multiple file |
+
+- ## Text
+
+  | Name      | Type      | Default | Required? | Description                                            |
+  | --------- | --------- | ------- | --------- | ------------------------------------------------------ |
+  | multiline | `boolean` | false   | no        | Multiline handling                                     |
+  | rowCount  | `number`  | 5       | no        | Specifies the visible height of a text area, in lines. |
+
+- ## Range
+  | Name      | Type     | Default | Required? | Description       |
+  | --------- | -------- | ------- | --------- | ----------------- |
+  | rangeMin  | `number` | 0       | no        | value of the min  |
+  | rangeMax  | `number` | 100     | no        | value of the max  |
+  | rangeStep | `number` | 1       | no        | value of the step |
 
 # Button properties
 
 | Name    | Type   | Required? | Description                        |
 | ------- | ------ | --------- | ---------------------------------- |
-| type    | string | true      | submit, cancel , reset             |
-| caption | string | true      | Button caption                     |
-| bgColor | string | true      | gray ,green,blue,orange,light,dark |
+| type    | string | yes       | submit, cancel , reset             |
+| caption | string | yes       | Button caption                     |
+| bgColor | string | yes       | gray ,green,blue,orange,light,dark |
 
 # Validators
 
-| Name         | Type    | Description                                                                                                          |
-| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| min          | number  | Validator that requires the control's value to be greater than or equal to the provided number.                      |
-| max          | number  | Validator that requires the control's value to be less than or equal to the provided number.                         |
-| email        | boolean | Validator that requires the control's value pass an email validation test.                                           |
-| pattern      | string  | Validator that requires the control's value to match a regex pattern.                                                |
-| required     | boolean | Validator that requires the control have a non-empty value.                                                          |
-| requiredTrue | boolean | Validator that requires the control's value be true. This validator is commonly used for required checkboxes.        |
-| minLength    | number  | Validator that requires the length of the control's value to be greater than or equal to the provided minimum length |
-| maxLength    | number  | Validator that requires the length of the control's value to be less than or equal to the provided maximum length.   |
+| name  | type     | Required | Description                                               |
+| ----- | -------- | -------- | --------------------------------------------------------- |
+| rule  | `string` | yes      | [Validator rules](#validator-rules)                       |
+| value | `any`    | no       | Usable for min, max,pattern,minlength and maxlength rules |
+| msg   | `string` | yes      | Error message                                             |
+
+- ## Validator rules
+
+| Name         | Type      | Description                                                                                                          |
+| ------------ | --------- | -------------------------------------------------------------------------------------------------------------------- |
+| min          | `number`  | Validator that requires the control's value to be greater than or equal to the provided number.                      |
+| max          | `number`  | Validator that requires the control's value to be less than or equal to the provided number.                         |
+| email        | `boolean` | Validator that requires the control's value pass an email validation test.                                           |
+| pattern      | `string`  | Validator that requires the control's value to match a regex pattern.                                                |
+| required     | `boolean` | Validator that requires the control have a non-empty value.                                                          |
+| requiredTrue | `boolean` | Validator that requires the control's value be true. This validator is commonly used for required checkboxes.        |
+| minLength    | `number`  | Validator that requires the length of the control's value to be greater than or equal to the provided minimum length |
+| maxLength    | `number`  | Validator that requires the length of the control's value to be less than or equal to the provided maximum length.   |
 
 # License
 

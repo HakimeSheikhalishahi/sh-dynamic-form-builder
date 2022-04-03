@@ -63,7 +63,7 @@ export class AppModule {}
 ]
 ```
 
-# Field properties and method
+# Field properties and methods
 
 | Name         | Type               | Default | Required? | Description                                                                                                                                   |
 | ------------ | ------------------ | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -109,18 +109,18 @@ export class AppModule {}
   | [fields]              | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                                                                                            |
   | simpleAddButton       | `boolean`             | `false` | no        | Only icon on button, without text                                                                                                           |
   | addButtonBGColor      | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark                                                                                   |
-  | dividerLineClass      | `string`              | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class-a class-b class-c'                        |
-  | ordinalNumberClass    | `string`              | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class-a class-b class-c' |
-  | suppressOrdinalNumber | `boolean`             | `false` | no        | doesn't show an ordinal number in the center of the divider line                                                                            |
-  | suppressDividerLine   | `boolean`             | `false` | no        | doesn't show divider line                                                                                                                   |
+  | dividerLineClass      | `string`              | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class1 class2 class3'                        |
+  | ordinalNumberClass    | `string`              | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class1 class2 class3' |
+  | suppressOrdinalNumber | `boolean`             | `false` | no        | Doesn't show an ordinal number in the center of the divider line                                                                            |
+  | suppressDividerLine   | `boolean`             | `false` | no        | Doesn't show divider line                                                                                                                   |
 
 # Button properties
 
-| Name    | Type     | Required? | Description                              |
-| ------- | -------- | --------- | ---------------------------------------- |
-| type    | `string` | yes       | Allowed values: submit, cancel and reset |
-| caption | `string` | yes       | Button caption                           |
-| bgColor | `string` | yes       | gray ,green,blue,orange,light,dark       |
+| Name    | Type     | Required? | Description                                            |
+| ------- | -------- | --------- | ------------------------------------------------------ |
+| type    | `string` | yes       | Allowed values: submit, cancel and reset               |
+| caption | `string` | yes       | Button caption                                         |
+| bgColor | `string` | yes       | Allowed values: gray ,green,blue,orange,light and dark |
 
 # Validators
 

@@ -65,45 +65,62 @@ export class AppModule {}
 
 # Field properties and method
 
-| Name         | Type               | Default | Required? | Description                                                                                                                |
-| ------------ | ------------------ | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
-| type         | `string`           | `-`     | yes       | text, range, number, password, color, dropdown, radio, checkbox, file, date, datetime-local, time, week, month, form-array |
-| name         | `string`           | `-`     | yes       | Form control name                                                                                                          |
-| defaultValue | `any`              | `-`     | no        | Form control default value                                                                                                 |
-| placeholder  | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                      |
-| [validators] | `IValidationRules` | `-`     | no        | [validators](#Validators)                                                                                                  |
-| id           | `string`           | `-`     | no        | Element id                                                                                                                 |
-| width        | `number`           | `100%`  | no        | Width of Control                                                                                                           |
-| disable      | `boolean`          | false   | no        | Disable control                                                                                                            |
+| Name         | Type               | Default | Required? | Description                                                                                                                                   |
+| ------------ | ------------------ | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| type         | `string`           | `-`     | yes       | Allowed values: text, range, number, password, color, dropdown, radio, checkbox, file, date, datetime-local, time, week, month and form-array |
+| name         | `string`           | `-`     | yes       | Form control name                                                                                                                             |
+| defaultValue | `any`              | `-`     | no        | Form control default value                                                                                                                    |
+| placeholder  | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                                         |
+| [validators] | `IValidationRules` | `-`     | no        | [validators](#Validators)                                                                                                                     |
+| id           | `string`           | `-`     | no        | Element id                                                                                                                                    |
+| width        | `number`           | `100%`  | no        | Width of Control                                                                                                                              |
+| disable      | `boolean`          | `false` | no        | Disable control                                                                                                                               |
 
 - ## File
 
   | Name         | Type    | Default | Required? | Description                |
   | ------------ | ------- | ------- | --------- | -------------------------- |
-  | onUpload     | `void`  | `-`     | yes       | File selection event       |
+  | onUpload     | `void`  | `-`     | yes       | File selection event.      |
   | multipleFile | boolean | `false` | no        | Allow choice multiple file |
 
 - ## Text
 
-  | Name      | Type      | Default | Required? | Description                                            |
-  | --------- | --------- | ------- | --------- | ------------------------------------------------------ |
-  | multiline | `boolean` | false   | no        | Multiline handling                                     |
-  | rowCount  | `number`  | 5       | no        | Specifies the visible height of a text area, in lines. |
+  | Name      | Type      | Default | Required? | Description                                           |
+  | --------- | --------- | ------- | --------- | ----------------------------------------------------- |
+  | multiline | `boolean` | `false` | no        | Multiline handling                                    |
+  | rowCount  | `number`  | `5`     | no        | Specifies the visible height of a text area, in lines |
+
+  - ## Text
+
+  | Name      | Type      | Default | Required? | Description                                  |
+  | --------- | --------- | ------- | --------- | -------------------------------------------- |
+  | [options] | IOption   | `-`     | yes       | Define options: {key: string;label: string;} |
+  | inline    | `boolean` | `false` | no        | Show on the same horizontal row              |
 
 - ## Range
   | Name      | Type     | Default | Required? | Description       |
   | --------- | -------- | ------- | --------- | ----------------- |
-  | rangeMin  | `number` | 0       | no        | value of the min  |
-  | rangeMax  | `number` | 100     | no        | value of the max  |
-  | rangeStep | `number` | 1       | no        | value of the step |
+  | rangeMin  | `number` | `0`     | no        | value of the min  |
+  | rangeMax  | `number` | `100`   | no        | value of the max  |
+  | rangeStep | `number` | `1`     | no        | value of the step |
+- ## Form-array
+  | Name                  | Type                  | Default | Required? | Description                                                                                                                                 |
+  | --------------------- | --------------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+  | [fields]              | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                                                                                            |
+  | simpleAddButton       | `boolean`             | `false` | no        | Only icon on button, without text                                                                                                           |
+  | addButtonBGColor      | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark                                                                                   |
+  | dividerLineClass      | `string`              | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class-a class-b class-c'                        |
+  | ordinalNumberClass    | `string`              | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class-a class-b class-c' |
+  | suppressOrdinalNumber | `boolean`             | `false` | no        | doesn't show an ordinal number in the center of the divider line                                                                            |
+  | suppressDividerLine   | `boolean`             | `false` | no        | doesn't show divider line                                                                                                                   |
 
 # Button properties
 
-| Name    | Type   | Required? | Description                        |
-| ------- | ------ | --------- | ---------------------------------- |
-| type    | string | yes       | submit, cancel , reset             |
-| caption | string | yes       | Button caption                     |
-| bgColor | string | yes       | gray ,green,blue,orange,light,dark |
+| Name    | Type     | Required? | Description                              |
+| ------- | -------- | --------- | ---------------------------------------- |
+| type    | `string` | yes       | Allowed values: submit, cancel and reset |
+| caption | `string` | yes       | Button caption                           |
+| bgColor | `string` | yes       | gray ,green,blue,orange,light,dark       |
 
 # Validators
 

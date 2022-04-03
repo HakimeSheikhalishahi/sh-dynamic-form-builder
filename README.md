@@ -63,6 +63,30 @@ export class AppModule {}
 ]
 ```
 
+# Input
+
+| Name      | Type      | Default | Required? | Description                                                                                                                                                                                      |
+| --------- | --------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| config    | `IConfig` | `-`     | yes       | [Config](#config)                                                                                                                                                                                |
+| formValue | `object`  | `{}`    | -         | Adjust form values                                                                                                                                                                               |
+| isSubmit  | `boolean` | `false` | no        | Set in to your Submit Function. If it sets true, Submit button will be disabled.When submit is clicked it must be set "true" value, when sending data will be ended it must be set "false" value |
+
+# Config
+
+| Name          | Type             | Default | Required? | Description                                                                                                     |
+| ------------- | ---------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
+| fields        | `IMainFieldItem` | `-`     | yes       | Form [Fields](#fields)                                                                                          |
+| title         | `string`         | `-`     | no        | Form title                                                                                                      |
+| titleClass    | `string`         | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class1 class1' |
+| buttonSetting | `IButtonSetting` | `{}`    | yes       | [Button setting](#button-setting)                                                                               |
+
+# Output
+
+| Name     | Type        | Description                                  |
+| -------- | ----------- | -------------------------------------------- |
+| (submit) | `FormGroup` | Output formGroup, when Submit button clicked |
+| (cancel) | `boolean`   | When the Cancel button has been clicked      |
+
 # Field properties and methods
 
 | Name         | Type               | Default | Required? | Description                                                                                                                                   |
@@ -104,15 +128,23 @@ export class AppModule {}
   | rangeMax  | `number` | `100`   | no        | value of the max  |
   | rangeStep | `number` | `1`     | no        | value of the step |
 - ## Form-array
-  | Name                  | Type                  | Default | Required? | Description                                                                                                                                 |
-  | --------------------- | --------------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-  | [fields]              | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                                                                                            |
-  | simpleAddButton       | `boolean`             | `false` | no        | Only icon on button, without text                                                                                                           |
-  | addButtonBGColor      | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark                                                                                   |
+  | Name                  | Type                  | Default | Required? | Description                                                                                                                              |
+  | --------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+  | [fields]              | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                                                                                         |
+  | simpleAddButton       | `boolean`             | `false` | no        | Only icon on button, without text                                                                                                        |
+  | addButtonBGColor      | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark                                                                                |
   | dividerLineClass      | `string`              | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class1 class2 class3'                        |
   | ordinalNumberClass    | `string`              | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class1 class2 class3' |
-  | suppressOrdinalNumber | `boolean`             | `false` | no        | Doesn't show an ordinal number in the center of the divider line                                                                            |
-  | suppressDividerLine   | `boolean`             | `false` | no        | Doesn't show divider line                                                                                                                   |
+  | suppressOrdinalNumber | `boolean`             | `false` | no        | Doesn't show an ordinal number in the center of the divider line                                                                         |
+  | suppressDividerLine   | `boolean`             | `false` | no        | Doesn't show divider line                                                                                                                |
+
+# Button setting
+
+| Name             | Type      | Default | Required? | Description                                           |
+| ---------------- | --------- | ------- | --------- | ----------------------------------------------------- |
+| [buttons]        | IButton   | `[]`    | yes       | The array of [Buttons](#buttons), order by definition |
+| buttonsAlign     | `string`  | `left`  | no        | Usable when fullWidthButtons is false                 |
+| fullWidthButtons | `boolean` | `false` | no        | Buttons fill the entire width of the container.       |
 
 # Button properties
 
@@ -127,8 +159,8 @@ export class AppModule {}
 | name  | type     | Required | Description                                               |
 | ----- | -------- | -------- | --------------------------------------------------------- |
 | rule  | `string` | yes      | [Validator rules](#validator-rules)                       |
-| value | `any`    | no       | Usable for min, max,pattern,minlength and maxlength rules |
 | msg   | `string` | yes      | Error message                                             |
+| value | `any`    | no       | Usable for min, max,pattern,minlength and maxlength rules |
 
 - ## Validator rules
 
@@ -142,6 +174,13 @@ export class AppModule {}
 | requiredTrue | `boolean` | Validator that requires the control's value be true. This validator is commonly used for required checkboxes.        |
 | minLength    | `number`  | Validator that requires the length of the control's value to be greater than or equal to the provided minimum length |
 | maxLength    | `number`  | Validator that requires the length of the control's value to be less than or equal to the provided maximum length.   |
+
+# Creator
+
+**Hakime sheikhalishahi**
+
+- http://www.linkedin.com/in/hakime-sheikhalishahi
+- h.sheykhalishahi@gmail.com
 
 # License
 

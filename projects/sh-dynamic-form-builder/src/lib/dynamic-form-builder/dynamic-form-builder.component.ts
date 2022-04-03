@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } fro
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { ButtonType } from './shared/enum/button-type.enum';
 import { IButton } from './shared/model/button.interface';
-import { IGroupItem } from './shared/model/group-item.interface';
+import { IConfig } from './shared/model/group-item.interface';
 import { IMainFieldItem } from './shared/model/main-field-item.interface';
 import { ErrorService } from './shared/service/error.service';
 import { FormService } from './shared/service/form.service';
@@ -14,7 +14,7 @@ import { FormService } from './shared/service/form.service';
 export class DynamicFormBuilderComponent implements OnInit {
   @Output() submit: EventEmitter<FormGroup> = new EventEmitter();
   @Output() cancel: EventEmitter<boolean> = new EventEmitter();
-  @Input() group!: IGroupItem;
+  @Input() config!: IConfig;
   @Input() formValue: any = {};
   @Input() isSubmit: boolean = false;
   get btnColor() {
@@ -42,7 +42,7 @@ export class DynamicFormBuilderComponent implements OnInit {
   }
   private setupForm(): void {
     this.formGroup = new FormGroup({});
-    this.group?.fields.forEach((x: IMainFieldItem, index: number) => {
+    this.config?.fields.forEach((x: IMainFieldItem, index: number) => {
       if (x.type == 'form-array') {
         this.setArray(x);
       } else {
@@ -52,7 +52,7 @@ export class DynamicFormBuilderComponent implements OnInit {
     this.formGroup.patchValue(this.formValue);
   }
   private setBtnAlighn(): void {
-    switch (this.group?.buttonSetting?.buttonsAlign) {
+    switch (this.config?.buttonSetting?.buttonsAlign) {
       case 'center':
         this.buttonsAlign = 'justify-content-center';
         break;

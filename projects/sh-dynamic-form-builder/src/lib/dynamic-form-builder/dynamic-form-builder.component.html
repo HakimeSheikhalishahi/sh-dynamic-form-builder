@@ -1,24 +1,24 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1 *ngIf="group?.title" [class]="group.titleClass">{{group?.title}}</h1>
-            <lib-dynamic-form *ngIf="group?.fields" [formGroup]="formGroup" [fields]="group.fields">
+            <h1 *ngIf="config?.title" [class]="config.titleClass">{{config?.title}}</h1>
+            <lib-dynamic-form *ngIf="config?.fields" [formGroup]="formGroup" [fields]="config.fields">
             </lib-dynamic-form>
         </div>
     </div>
     <div class="row">
         <div class="col my-1">
-            <div *ngIf="!group?.buttonSetting?.fullWidthButtons" class="d-flex flex-row" [class]="buttonsAlign">
+            <div *ngIf="!config?.buttonSetting?.fullWidthButtons" class="d-flex flex-row" [class]="buttonsAlign">
                 <ng-container *ngTemplateOutlet="buttons"></ng-container>
             </div>
-            <div *ngIf="group?.buttonSetting?.fullWidthButtons" class="d-grid gap-2">
+            <div *ngIf="config?.buttonSetting?.fullWidthButtons" class="d-grid gap-2">
                 <ng-container *ngTemplateOutlet="buttons"></ng-container>
             </div>
         </div>
     </div>
 </div>
 <ng-template #buttons>
-    <ng-container *ngFor="let btn of group?.buttonSetting?.buttons">
+    <ng-container *ngFor="let btn of config?.buttonSetting?.buttons">
         <button class="btn btn-block margin" [class]="btnColor[btn.bgColor]"
             [disabled]="isSubmit && btn.type==buttonType.Submit" type="button" (click)="click(btn)">
             {{btn.caption}}

@@ -63,6 +63,45 @@ export class AppModule {}
 ]
 ```
 
+## In component
+
+```typescript
+
+config: IFormConfig = {
+    title: 'Profile',
+    fields: [
+      {
+        type: 'text', name: 'fullName', label: 'Full name',
+        validators: [
+          { rule: 'required', msg: 'Full name is required' },
+          { rule: 'minlength', value: 6, msg: 'Full name must be at least 6 characters long' },
+
+        ],
+      },
+      {
+        type: 'text', name: 'fullName', label: 'E-mail',
+        validators: [
+          { rule: 'required', msg: 'E-mail is required' },
+          { rule: 'email', msg: 'E-mail is wrong' },
+        ],
+      }
+      ...
+}
+```
+
+## In template
+
+```html
+<div class="container">
+  <sh-dynamic-form-builder
+    [config]="config"
+    [isSubmit]="isSubmit"
+    (submit)="submit($event)"
+  >
+  </sh-dynamic-form-builder>
+</div>
+```
+
 # Upload file
 
 ```typescript

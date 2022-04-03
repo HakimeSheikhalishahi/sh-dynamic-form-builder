@@ -65,11 +65,11 @@ export class AppModule {}
 
 # Input
 
-| Name      | Type          | Default | Required? | Description                                                                                                                                                                                        |
-| --------- | ------------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| config    | `IFormConfig` | `-`     | yes       | [Config](#config)                                                                                                                                                                                  |
-| formValue | `object`      | `{}`    | -         | Adjust form values                                                                                                                                                                                 |
-| isSubmit  | `boolean`     | `false` | no        | Set in to your Submit Function. If it sets "true", Submit button will be disabled.When submit is clicked it must be set "true" value, when sending data will be ended it must be set "false" value |
+| Name              | Type          | Default | Required? | Description                                                                                                                                                                                        |
+| ----------------- | ------------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [config](#config) | `IFormConfig` | `-`     | yes       | Form config                                                                                                                                                                                        |
+| formValue         | `object`      | `{}`    | -         | Adjust form values                                                                                                                                                                                 |
+| isSubmit          | `boolean`     | `false` | no        | Set in to your Submit Function. If it sets "true", Submit button will be disabled.When submit is clicked it must be set "true" value, when sending data will be ended it must be set "false" value |
 
 # Config
 

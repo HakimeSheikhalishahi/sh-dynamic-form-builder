@@ -95,7 +95,7 @@ export class AppModule {}
 | name                        | `string`           | `-`     | yes       | Form control name                                                                                                                             |
 | defaultValue                | `any`              | `-`     | no        | Form control default value                                                                                                                    |
 | placeholder                 | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                                         |
-| [[validators]](#Validators) | `IValidationRules` | `-`     | no        | Set validator rules and error messages                                                                                                              |
+| [[validators]](#Validators) | `IValidationRules` | `-`     | no        | Set validator rules and error messages                                                                                                        |
 | id                          | `string`           | `-`     | no        | Element id                                                                                                                                    |
 | width                       | `number`           | `100%`  | no        | Width of Control                                                                                                                              |
 | disable                     | `boolean`          | `false` | no        | Disable control                                                                                                                               |
@@ -122,29 +122,37 @@ export class AppModule {}
   | inline    | `boolean` | `false` | no        | Show on the same horizontal row              |
 
 - ## Range
+  | Name     | Type     | Default | Required? | Description      |
+  | -------- | -------- | ------- | --------- | ---------------- |
+  | rangeMin | `number` | `0`     | no        | value of the min |
+- ## Range
   | Name      | Type     | Default | Required? | Description       |
   | --------- | -------- | ------- | --------- | ----------------- |
   | rangeMin  | `number` | `0`     | no        | value of the min  |
   | rangeMax  | `number` | `100`   | no        | value of the max  |
   | rangeStep | `number` | `1`     | no        | value of the step |
 - ## Form-array
-  | Name                  | Type                  | Default | Required? | Description                                                                                                                              |
-  | --------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-  | [fields]              | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                                                                                         |
-  | simpleAddButton       | `boolean`             | `false` | no        | Only icon on button, without text                                                                                                        |
-  | addButtonBGColor      | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark                                                                                |
-  | dividerLineClass      | `string`              | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class1 class2 class3'                        |
-  | ordinalNumberClass    | `string`              | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class1 class2 class3' |
-  | suppressOrdinalNumber | `boolean`             | `false` | no        | Doesn't show an ordinal number in the center of the divider line                                                                         |
-  | suppressDividerLine   | `boolean`             | `false` | no        | Doesn't show divider line                                                                                                                |
+  | Name                    | Type         | Default | Required? | Description                           |
+  | ----------------------- | ------------ | ------- | --------- | ------------------------------------- |
+  | [formArray](#FormArray) | `IFormArray` | `{}`    | no        | Set form array fields and validations |
+  - ### FormArray
+    | Name                  | Type                  | Default | Required? | Description                                                                                                                              |
+    | --------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+    | [fields]              | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                                                                                         |
+    | simpleAddButton       | `boolean`             | `false` | no        | Only icon on button, without text                                                                                                        |
+    | addButtonBGColor      | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark                                                                                |
+    | dividerLineClass      | `string`              | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class1 class2 class3'                        |
+    | ordinalNumberClass    | `string`              | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class1 class2 class3' |
+    | suppressOrdinalNumber | `boolean`             | `false` | no        | Doesn't show an ordinal number in the center of the divider line                                                                         |
+    | suppressDividerLine   | `boolean`             | `false` | no        | Doesn't show divider line                                                                                                                |
 
 # Button setting
 
-| Name             | Type      | Default | Required? | Description                                                     |
-| ---------------- | --------- | ------- | --------- | --------------------------------------------------------------- |
-| [buttons]        | IButton   | `[]`    | yes       | The array of [Buttons](#button-properties), order by definition |
-| buttonsAlign     | `string`  | `left`  | no        | Usable when fullWidthButtons is false                           |
-| fullWidthButtons | `boolean` | `false` | no        | Buttons fill the entire width of the container.                 |
+| Name                            | Type      | Default | Required? | Description                                     |
+| ------------------------------- | --------- | ------- | --------- | ----------------------------------------------- |
+| [[buttons]](#button-properties) | IButton   | `[]`    | yes       | The array of buttons, order by definition       |
+| buttonsAlign                    | `string`  | `left`  | no        | Usable when fullWidthButtons is false           |
+| fullWidthButtons                | `boolean` | `false` | no        | Buttons fill the entire width of the container. |
 
 - # Button properties
 
@@ -156,11 +164,11 @@ export class AppModule {}
 
 # Validators
 
-| name  | type     | Required | Description                                               |
-| ----- | -------- | -------- | --------------------------------------------------------- |
-| rule  | `string` | yes      | [Validator rules](#validator-rules)                       |
-| msg   | `string` | yes      | Error message                                             |
-| value | `any`    | no       | Usable for min, max,pattern,minlength and maxlength rules |
+| name                     | type     | Required | Description                                               |
+| ------------------------ | -------- | -------- | --------------------------------------------------------- |
+| [rule](#validator-rules) | `string` | yes      | Define rules                                              |
+| msg                      | `string` | yes      | Error message                                             |
+| value                    | `any`    | no       | Usable for min, max,pattern,minlength and maxlength rules |
 
 - ## Validator rules
 

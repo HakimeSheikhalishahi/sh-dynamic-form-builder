@@ -5,7 +5,7 @@ export interface IFieldItem {
     label: string;
     /**Usable for all controls */
     defaultValue?: any;
-    /**Usable for text, number, password and email*/
+    /**Usable for text, number, password, dropdown and email*/
     placeholder?: string;
     /**Usable for all controls */
     validators?: IValidationRules [];

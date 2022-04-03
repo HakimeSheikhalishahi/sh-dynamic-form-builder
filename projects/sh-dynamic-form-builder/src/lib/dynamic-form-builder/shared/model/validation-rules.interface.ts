@@ -6,7 +6,8 @@ export interface IValidationRules {
     | 'email'
     | 'required'
     | 'minlength'
-    | 'maxlength';
+    | 'maxlength'
+    | 'requiredTrue'
     /**Usable for min, max,pattern,minlength and maxlength rules */
     value?: any;
     /**Error message */

@@ -23,7 +23,7 @@
             <div class="alert alert-danger my-1 p-2 fadeInDown animated"
                 *ngIf="!control.valid && (control.dirty || control.touched)" [style.width.px]="field.width || '100%'">
                 <ng-container *ngFor="let err of field.validators">
-                    <ng-container *ngIf="form.get(field.name)?.getError(err.rule)">
+                    <ng-container *ngIf="form.get(field.name)?.getError(err.rule!=='requiredTrue'?err.rule:'required')">
                         {{err.msg}}
                     </ng-container>
                 </ng-container>

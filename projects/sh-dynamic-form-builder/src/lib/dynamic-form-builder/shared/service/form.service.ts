@@ -55,6 +55,11 @@ export class FormService {
             Validators.maxLength(+val.value)
           );
           break;
+        case 'requiredTrue':
+          validatorArr.push(
+            Validators.requiredTrue
+          );
+          break;
         default:
           break;
       }

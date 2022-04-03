@@ -63,6 +63,25 @@ export class AppModule {}
 ]
 ```
 
+# Upload file
+
+```typescript
+config: IFormConfig = {
+    fields: [
+      {
+        type: 'file',name: 'avatar', label: 'Avatar',
+         onUpload: this.onUpload.bind(this), multipleFile: true
+      }
+      ...
+```
+
+```typescript
+private onUpload(event: any): void {
+    const files = event.files;
+    ...
+}
+```
+
 # Input
 
 | Name              | Type          | Default | Required? | Description                                                                                                                                                                                        |
@@ -75,7 +94,7 @@ export class AppModule {}
 
 | Name                             | Type             | Default | Required? | Description                                                                                                     |
 | -------------------------------- | ---------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
-| [Fields](#fields)                | `IMainFieldItem` | `-`     | yes       | Form fields                                                                                                     |
+| [fields](#fields)                | `IMainFieldItem` | `-`     | yes       | Form fields                                                                                                     |
 | title                            | `string`         | `-`     | no        | Form title                                                                                                      |
 | titleClass                       | `string`         | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class1 class1' |
 | [buttonSetting](#button-setting) | `IButtonSetting` | `{}`    | yes       | Button setting                                                                                                  |
@@ -102,10 +121,10 @@ export class AppModule {}
 
 - ## File
 
-  | Name         | Type    | Default | Required? | Description                |
-  | ------------ | ------- | ------- | --------- | -------------------------- |
-  | onUpload     | `void`  | `-`     | yes       | File selection event.      |
-  | multipleFile | boolean | `false` | no        | Allow choice multiple file |
+  | Name                     | Type      | Default | Required? | Description                |
+  | ------------------------ | --------- | ------- | --------- | -------------------------- |
+  | [onUpload](#upload-file) | `void`    | `-`     | yes       | File selection event.      |
+  | multipleFile             | `boolean` | `false` | no        | Allow choice multiple file |
 
 - ## Text
 
@@ -118,7 +137,7 @@ export class AppModule {}
 
   | Name      | Type      | Default | Required? | Description                                  |
   | --------- | --------- | ------- | --------- | -------------------------------------------- |
-  | [options] | IOption   | `-`     | yes       | Define options: {key: string;label: string;} |
+  | [options] | `IOption` | `-`     | yes       | Define options: {key: string;label: string;} |
   | inline    | `boolean` | `false` | no        | Show on the same horizontal row              |
 
 - ## Range
@@ -150,7 +169,7 @@ export class AppModule {}
 
 | Name                            | Type      | Default | Required? | Description                                     |
 | ------------------------------- | --------- | ------- | --------- | ----------------------------------------------- |
-| [[buttons]](#button-properties) | IButton   | `[]`    | yes       | The array of buttons, order by definition       |
+| [[buttons]](#button-properties) | `IButton` | `[]`    | yes       | The array of buttons, order by definition       |
 | buttonsAlign                    | `string`  | `left`  | no        | Usable when fullWidthButtons is false           |
 | fullWidthButtons                | `boolean` | `false` | no        | Buttons fill the entire width of the container. |
 
@@ -193,3 +212,7 @@ export class AppModule {}
 # License
 
 MIT
+
+```
+
+```

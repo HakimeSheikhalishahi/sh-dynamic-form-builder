@@ -90,7 +90,7 @@ export class AppModule {}
   | multiline | `boolean` | `false` | no        | Multiline handling                                    |
   | rowCount  | `number`  | `5`     | no        | Specifies the visible height of a text area, in lines |
 
-  - ## Text
+- ## Radio
 
   | Name      | Type      | Default | Required? | Description                                  |
   | --------- | --------- | ------- | --------- | -------------------------------------------- |

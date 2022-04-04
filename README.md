@@ -196,19 +196,28 @@ private onUpload(event: any): void {
   | rangeMax  | `number` | `100`   | no        | value of the max  |
   | rangeStep | `number` | `1`     | no        | value of the step |
 - ## Form-array
+
   | Name                    | Type         | Default | Required? | Description                           |
   | ----------------------- | ------------ | ------- | --------- | ------------------------------------- |
   | [formArray](#FormArray) | `IFormArray` | `{}`    | no        | Set form array fields and validations |
+
   - ### FormArray
-    | Name                  | Type                  | Default | Required? | Description                                                                                                                              |
-    | --------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-    | [fields]              | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                                                                                         |
-    | simpleAddButton       | `boolean`             | `false` | no        | Only icon on button, without text                                                                                                        |
-    | addButtonBGColor      | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark                                                                                |
-    | dividerLineClass      | `string`              | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class1 class2 class3'                        |
-    | ordinalNumberClass    | `string`              | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class1 class2 class3' |
-    | suppressOrdinalNumber | `boolean`             | `false` | no        | Doesn't show an ordinal number in the center of the divider line                                                                         |
-    | suppressDividerLine   | `boolean`             | `false` | no        | Doesn't show divider line                                                                                                                |
+
+    | Name                | Type                  | Default | Required? | Description                                                      |
+    | ------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------- |
+    | [fields]            | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                 |
+    | simpleAddButton     | `boolean`             | `false` | no        | Only icon on button, without text                                |
+    | addButtonBGColor    | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark        |
+    | [divider](#divider) | `IDivider`            | `-`     | no        | doesn't show an ordinal number in the center of the divider line |
+
+    - #### Divider
+      | Name                  | Type      | Default | Required? | Description                                                                                                                              |
+      | --------------------- | --------- | ------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+      | suppress              | `boolean` | `false` | no        | Doesn't show divider                                                                                                                     |
+      | lineClass             | `string`  | `-`     | no        | Set style for divider line, you can add one or more class name split by space. for example:'class1 class2 class3'                        |
+      | ordinalNumberClass    | `string`  | `-`     | no        | Set style for ordinal number between divider line, you can add one or more class name split by space. for example:'class1 class2 class3' |
+      | suppressOrdinalNumber | `boolean` | `false` | no        | Doesn't show an ordinal number in the center of the divider line                                                                         |
+      | height                | `number`  | `3`     | no        | The height of divider                                                                                                                    |
 
 # Button setting
 

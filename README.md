@@ -4,13 +4,29 @@
  generate form controls and form array.
  </p>
  
- ![todo](https://user-images.githubusercontent.com/51107856/161571161-511dea0d-b587-4cfb-aeee-fb1fb531e5d3.png?raw=true "Title")
+ ![todo](https://user-images.githubusercontent.com/51107856/161571161-511dea0d-b587-4cfb-aeee-fb1fb531e5d3.png?raw=true "Dynamic Form Builder")
+# Field types
 
- ## Table of contents
- 
+- ```text```
+- ```range```
+- ```number```
+- ```password```
+- ```color```
+- ```dropdown```
+- ```radio```
+- ```checkbox```
+- ```file```
+- ```date```
+- ```datetime-local```
+- ```time```
+- ```week```
+- ```month```
+- ```form-array``` 🌟
+
+## Table of contents
+
 - [Install](#install)
 - [Quick start](#quick-start)
-- [Field properties](#field-properties)
 - [Import style and icon](#import-style-and-icon)
 - [How to use?](#how-to-use)
 - [Input](#input)
@@ -318,5 +334,3 @@ private onUpload(event: any): void {
 # License
 
 MIT
-
-

@@ -4,6 +4,8 @@
  generate form controls and form array.
  </p>
  
+ ![todo](https://user-images.githubusercontent.com/51107856/161571161-511dea0d-b587-4cfb-aeee-fb1fb531e5d3.png?raw=true "Title")
+
  ## Table of contents
  
 - [Install](#install)

@@ -21,7 +21,7 @@
 - ```time```
 - ```week```
 - ```month```
-- ```form-array``` 🌟
+- ```form-array```🌠
 
 ## Table of contents
 

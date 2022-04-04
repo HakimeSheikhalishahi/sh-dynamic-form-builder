@@ -10,6 +10,13 @@
 - [Quick start](#quick-start)
 - [Field properties](#field-properties)
 - [Import style and icon](#import-style-and-icon)
+- [How to use](#how-to-use)
+- [Input](#input)
+- [Output](#output)
+- [Field properties and methods](#field-properties-and-methods)
+- [Button setting](#button-setting)
+- [Validators](#validators)
+- [Creator](#creator)
 - [License](#license)
 
 # Install
@@ -63,12 +70,15 @@ export class AppModule {}
 ]
 ```
 
+# How to use?
+
 ## In component
 
 ```typescript
 formGroup = new FormGroup({});
 isSubmit: boolean = false;
 ```
+
 ```typescript
 config: IFormConfig = {
     title: 'Profile',
@@ -108,6 +118,10 @@ config: IFormConfig = {
         validators: [
           { rule: 'email', msg: 'E-mail is wrong' }
         ],
+      },
+      {
+        type: 'file', name: 'avatar', label: 'Avatar',
+        onUpload: this.onUpload.bind(this), multipleFile: true
       }
       ...
         buttonSetting: {
@@ -119,6 +133,13 @@ config: IFormConfig = {
           { type: 'cancel', caption: 'Cancel', bgColor: 'light' }
         ]
     }
+}
+```
+
+```typescript
+private onUpload(event: any): void {
+    const files = event.files;
+    ...
 }
 ```
 
@@ -150,25 +171,6 @@ config: IFormConfig = {
 </div>
 ```
 
-# Upload file
-
-```typescript
-config: IFormConfig = {
-    fields: [
-      {
-        type: 'file',name: 'avatar', label: 'Avatar',
-         onUpload: this.onUpload.bind(this), multipleFile: true
-      }
-      ...
-```
-
-```typescript
-private onUpload(event: any): void {
-    const files = event.files;
-    ...
-}
-```
-
 # Input
 
 | Name              | Type          | Default | Required? | Description                                                                                                                                                                                        |
@@ -177,7 +179,7 @@ private onUpload(event: any): void {
 | formValue         | `object`      | `{}`    | -         | Adjust form values                                                                                                                                                                                 |
 | isSubmit          | `boolean`     | `false` | no        | Set in to your Submit Function. If it sets "true", Submit button will be disabled.When submit is clicked it must be set "true" value, when sending data will be ended it must be set "false" value |
 
-# Config
+- ## Config
 
 | Name                             | Type             | Default | Required? | Description                                                                                                     |
 | -------------------------------- | ---------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
@@ -315,6 +317,4 @@ private onUpload(event: any): void {
 
 MIT
 
-```
 
-```

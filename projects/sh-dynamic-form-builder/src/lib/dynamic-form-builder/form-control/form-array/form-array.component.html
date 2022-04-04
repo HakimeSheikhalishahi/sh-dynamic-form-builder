@@ -24,11 +24,11 @@
     </div>
 </div>
 <button *ngIf="field.formArray?.simpleAddButton" class="btn mt-2" [class]="addButtonBgColor" type="button"
-    (click)="addform()">
+    (mousedown)="addform()">
     <i class="bi bi-plus"></i>
 </button>
 <button *ngIf="!field.formArray?.simpleAddButton" class="btn mt-2" type="button" [class]="addButtonBgColor"
-    (click)="addform()">
+    (mousedown)="addform()">
     Add
     <span *ngIf="formArray?.controls?.length"> more</span>
     {{field?.label}}

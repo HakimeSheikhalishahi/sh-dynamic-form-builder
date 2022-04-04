@@ -10,7 +10,7 @@
 - [Quick start](#quick-start)
 - [Field properties](#field-properties)
 - [Import style and icon](#import-style-and-icon)
-- [How to use](#how-to-use)
+- [How to use?](#how-to-use)
 - [Input](#input)
 - [Output](#output)
 - [Field properties and methods](#field-properties-and-methods)
@@ -128,7 +128,7 @@ config: IFormConfig = {
       fullWidthButtons: true,
       buttons:
         [
-          { type: 'submit', caption: 'Submit', bgColor: 'green' },
+          { type: 'submit', caption: 'Submit', bgColor: 'blue' },
           { type: 'reset', caption: 'Reset', bgColor: 'orange' },
           { type: 'cancel', caption: 'Cancel', bgColor: 'light' }
         ]

@@ -82,33 +82,33 @@ export class DynamicFormBuilderComponent implements OnInit {
       this.errorService.formArrayField(field.name);
     }
   }
-  public click(btn: IButton): void {
+  public action(btn: IButton): void {
     switch (btn.type) {
       case 'submit':
-        this.submitClick();
+        this.submitAction();
         break;
       case 'reset':
-        this.resetClick();
+        this.resetAction();
         break;
       case 'cancel':
-        this.cancelClick();
+        this.cancelAction();
         break;
       default:
         break;
     }
   }
-  public submitClick(): void {
+  public submitAction(): void {
     if(!this.formGroup.valid){
       this.formGroup.markAllAsTouched();
       return;
     }
     this.submit.emit(this.formGroup);
   }
-  public resetClick(): void {
+  public resetAction(): void {
     this.formGroup.reset();
     this.formGroup.patchValue(this.formValue);
   }
-  public cancelClick(): void {
+  public cancelAction(): void {
     this.cancel.emit(true);
   }
   ngDistroy() {

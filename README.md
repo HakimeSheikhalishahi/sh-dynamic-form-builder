@@ -71,7 +71,7 @@ config: IFormConfig = {
     title: 'Profile',
     fields: [
       {
-        type: 'text', name: 'fullName', label: 'Full name',
+        type: 'text', name: 'fullName', label: 'Full name', id: 'fullName',
         validators: [
           { rule: 'required', msg: 'Full name is required' },
           { rule: 'minlength', value: 6, msg: 'Full name must be at least 6 characters long' },
@@ -79,10 +79,31 @@ config: IFormConfig = {
         ],
       },
       {
-        type: 'text', name: 'email', label: 'E-mail',
+        type: 'form-array',
+        label: 'Tasks',
+        name: 'tasks',
+        formArray: {
+          simpleAddButton: true,
+          addButtonBGColor: 'green',
+          fields: [
+            {
+              type: 'text', name: 'title', label: 'title', validators: [
+                { rule: 'required', msg: 'title is required!' },
+                { rule: 'maxlength', value: 50, msg: 'Maximum length should be 50 characters' }
+              ]
+            },
+            {
+              type: 'date', name: 'dueDate', label: 'due date', validators: [
+                { rule: 'required', msg: 'date is required!' }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        type: 'text', name: 'email1', label: 'E-mail',
         validators: [
-          { rule: 'required', msg: 'E-mail is required' },
-          { rule: 'email', msg: 'E-mail is wrong' },
+          { rule: 'email', msg: 'E-mail is wrong' }
         ],
       }
       ...
@@ -199,7 +220,7 @@ private onUpload(event: any): void {
 
   | Name                    | Type         | Default | Required? | Description                           |
   | ----------------------- | ------------ | ------- | --------- | ------------------------------------- |
-  | [formArray](#FormArray) | `IFormArray` | `{}`    | no        | Set form array fields and validations |
+  | [formArray](#FormArray) | `IFormArray` | `-`     | no        | Set form array fields and validations |
 
   - ### FormArray
 

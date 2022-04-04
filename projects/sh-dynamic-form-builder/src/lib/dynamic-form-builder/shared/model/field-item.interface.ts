@@ -3,23 +3,23 @@ import { IValidationRules } from "./validation-rules.interface";
 export interface IFieldItem {
     name: string;
     label: string;
-    /**Usable for all controls */
+    /**Setting default value */
     defaultValue?: any;
     /**Usable for text, number, password, dropdown and email*/
     placeholder?: string;
-    /**Usable for all controls */
+    /**Setting validator and error message */
     validators?: IValidationRules[];
     /**Usable for file */
     onUpload?: (e: any) => void;
     /**Usable for file */
     multipleFile?: boolean;
-    /**Element id, usable for all controls */
+    /**Element id */
     id?: string;
     /**Usable for textarea */
     multiline?: boolean;
     /**Usable for textarea, default is 5 lines */
     rowCount?: number;
-    /**Usable for all controls, default with is 100% */
+    /**Default with is 100% */
     width?: number;
     /**Usable for range input, default is 0 */
     rangeMin?: number;

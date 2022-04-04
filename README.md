@@ -7,21 +7,21 @@
  ![todo](https://user-images.githubusercontent.com/51107856/161571161-511dea0d-b587-4cfb-aeee-fb1fb531e5d3.png?raw=true "Dynamic Form Builder")
 # Field types
 
-- ```text```
-- ```range```
-- ```number```
-- ```password```
-- ```color```
-- ```dropdown```
-- ```radio```
-- ```checkbox```
-- ```file```
-- ```date```
-- ```datetime-local```
-- ```time```
-- ```week```
-- ```month```
-- ```form-array```🌠
+- ```Text```
+- ```Range```
+- ```Number```
+- ```Password```
+- ```Color```
+- ```Dropdown```
+- ```Radio```
+- ```Checkbox```
+- ```File```
+- ```Date```
+- ```Datetime local```
+- ```Time```
+- ```Week```
+- ```Month```
+- ```Form array```
 
 ## Table of contents
 

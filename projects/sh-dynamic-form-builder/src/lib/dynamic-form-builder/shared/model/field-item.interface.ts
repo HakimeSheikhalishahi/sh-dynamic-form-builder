@@ -16,7 +16,6 @@ export interface IFieldItem {
     /**Element id, usable for all controls */
     id?: string;
     /**Usable for textarea */
-    list?: string;
     multiline?: boolean;
     /**Usable for textarea, default is 5 lines */
     rowCount?: number;
@@ -30,7 +29,7 @@ export interface IFieldItem {
     rangeStep?: number;
     /**Usable for radio button, default is false */
     inline?: boolean;
-    /**Usable for radio button */
+    /**Usable for radio button and dropdown list*/
     options?: IOption[];
     disable?: boolean;
 }

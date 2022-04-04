@@ -179,6 +179,12 @@ private onUpload(event: any): void {
   | [options] | `IOption` | `-`     | yes       | Define options: {key: string;label: string;} |
   | inline    | `boolean` | `false` | no        | Show on the same horizontal row              |
 
+- ## dropdown
+
+  | Name      | Type      | Default | Required? | Description                                  |
+  | --------- | --------- | ------- | --------- | -------------------------------------------- |
+  | [options] | `IOption` | `-`     | yes       | Define options: {key: string;label: string;} |
+
 - ## Range
   | Name     | Type     | Default | Required? | Description      |
   | -------- | -------- | ------- | --------- | ---------------- |

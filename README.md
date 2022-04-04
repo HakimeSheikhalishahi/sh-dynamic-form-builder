@@ -66,7 +66,10 @@ export class AppModule {}
 ## In component
 
 ```typescript
-
+formGroup = new FormGroup({});
+isSubmit: boolean = false;
+```
+```typescript
 config: IFormConfig = {
     title: 'Profile',
     fields: [
@@ -107,7 +110,31 @@ config: IFormConfig = {
         ],
       }
       ...
+        buttonSetting: {
+      fullWidthButtons: true,
+      buttons:
+        [
+          { type: 'submit', caption: 'Submit', bgColor: 'green' },
+          { type: 'reset', caption: 'Reset', bgColor: 'orange' },
+          { type: 'cancel', caption: 'Cancel', bgColor: 'light' }
+        ]
+    }
 }
+```
+
+```typescript
+ public submit(event: FormGroup): void {
+    this.isSubmit = true;
+    this.formGroup = event;
+    /**Sending data ... */
+    this.isSubmit = false;
+ }
+```
+
+```typescript
+ public cancel(): void {
+    /** */
+ }
 ```
 
 ## In template

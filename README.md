@@ -5,23 +5,36 @@
  </p>
  
  ![todo](https://user-images.githubusercontent.com/51107856/161571161-511dea0d-b587-4cfb-aeee-fb1fb531e5d3.png?raw=true "Dynamic Form Builder")
+
+# Demo
+
+Example form in
+<a link='https://stackblitz.com/edit/angular-masgfg?file=angular.json'>
+stackblitz
+</a>
+
+<!-- Example form with all field type in
+<a link='https://stackblitz.com/edit/angular-masgfg?file=angular.json'>
+stackblitz
+</a> -->
+
 # Field types
 
-- ```Text```
-- ```Range```
-- ```Number```
-- ```Password```
-- ```Color```
-- ```Dropdown```
-- ```Radio```
-- ```Checkbox```
-- ```File```
-- ```Date```
-- ```Datetime local```
-- ```Time```
-- ```Week```
-- ```Month```
-- ```Form array```
+- `Text`
+- `Range`
+- `Number`
+- `Password`
+- `Color`
+- `Dropdown`
+- `Radio`
+- `Checkbox`
+- `File`
+- `Date`
+- `Datetime local`
+- `Time`
+- `Week`
+- `Month`
+- `Form array`
 
 ## Table of contents
 
@@ -40,7 +53,7 @@
 # Install
 
 ```bash
-npm install @sh-dynamic-form-builder
+npm i sh-dynamic-form-builder
 ```
 
 ## Install dependencies
@@ -71,12 +84,6 @@ export class AppModule {}
 ```
 
 # Import style and icon
-
-## In styles.scss
-
-```css
-@import "~bootstrap-icons/font/bootstrap-icons";
-```
 
 ## In angular.json
 

@@ -9,7 +9,7 @@
 # Demo
 
 Example form in
-<a link='https://stackblitz.com/edit/angular-masgfg?file=angular.json'>
+<a href='https://stackblitz.com/edit/angular-masgfg?file=src%2Fapp%2Fapp.component.html'>
 stackblitz
 </a>
 

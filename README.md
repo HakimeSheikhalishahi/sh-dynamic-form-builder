@@ -6,18 +6,6 @@
  
  ![todo](https://user-images.githubusercontent.com/51107856/161571161-511dea0d-b587-4cfb-aeee-fb1fb531e5d3.png?raw=true "Dynamic Form Builder")
 
-# Demo
-
-Example form in
-<a href='https://stackblitz.com/edit/angular-masgfg?file=src%2Fapp%2Fapp.component.html'>
-stackblitz
-</a>
-
-<!-- Example form with all field type in
-<a link='https://stackblitz.com/edit/angular-masgfg?file=angular.json'>
-stackblitz
-</a> -->
-
 # Field types
 
 - `Text`

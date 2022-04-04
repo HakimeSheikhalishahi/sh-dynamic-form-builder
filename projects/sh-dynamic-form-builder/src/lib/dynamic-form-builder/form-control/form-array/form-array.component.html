@@ -6,7 +6,8 @@
         <div [formArrayName]="formArrayName">
             <div *ngFor="let control of formArray.controls; let i=index">
                 <div [formGroupName]="i">
-                    <lib-divider *ngIf="!field?.formArray?.suppressDividerLine" [field]="field" [counter]="i"></lib-divider>
+                    <lib-divider *ngIf="!field?.formArray?.divider?.suppress" [divider]="field?.formArray?.divider!" [counter]="i">
+                    </lib-divider>
                     <div class="text-end del-btn">
                         <i class="bi bi-x-lg text-danger" (click)="removeform(i)"></i>
                     </div>

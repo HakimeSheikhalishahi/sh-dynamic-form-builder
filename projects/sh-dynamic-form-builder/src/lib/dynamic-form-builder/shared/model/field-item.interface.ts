@@ -1,5 +1,5 @@
 import { IOption } from "./option.interface";
-import { IValidationRules  } from "./validation-rules.interface";
+import { IValidationRules } from "./validation-rules.interface";
 export interface IFieldItem {
     name: string;
     label: string;
@@ -8,7 +8,7 @@ export interface IFieldItem {
     /**Usable for text, number, password, dropdown and email*/
     placeholder?: string;
     /**Usable for all controls */
-    validators?: IValidationRules [];
+    validators?: IValidationRules[];
     /**Usable for file */
     onUpload?: (e: any) => void;
     /**Usable for file */
@@ -16,6 +16,7 @@ export interface IFieldItem {
     /**Element id, usable for all controls */
     id?: string;
     /**Usable for textarea */
+    list?: string;
     multiline?: boolean;
     /**Usable for textarea, default is 5 lines */
     rowCount?: number;
@@ -31,5 +32,5 @@ export interface IFieldItem {
     inline?: boolean;
     /**Usable for radio button */
     options?: IOption[];
-    disable?:boolean;
+    disable?: boolean;
 }

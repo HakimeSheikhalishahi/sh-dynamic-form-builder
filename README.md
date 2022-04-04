@@ -79,7 +79,7 @@ config: IFormConfig = {
         ],
       },
       {
-        type: 'text', name: 'fullName', label: 'E-mail',
+        type: 'text', name: 'email', label: 'E-mail',
         validators: [
           { rule: 'required', msg: 'E-mail is required' },
           { rule: 'email', msg: 'E-mail is wrong' },

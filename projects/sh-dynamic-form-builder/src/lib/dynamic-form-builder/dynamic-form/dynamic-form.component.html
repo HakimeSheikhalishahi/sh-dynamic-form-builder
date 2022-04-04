@@ -1,5 +1,3 @@
-<form [formGroup]="formGroup" class="form">
-    <div *ngFor="let field of fields">
-        <lib-fields [field]="field" [form]="formGroup"></lib-fields>
-    </div>
-</form>
+<div *ngFor="let field of fields">
+    <lib-fields [field]="field" [form]="formGroup"></lib-fields>
+</div>

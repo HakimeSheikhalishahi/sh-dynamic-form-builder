@@ -1,10 +1,11 @@
 <div class="pt-1">
-    <hr [size]="size+'px'" *ngIf="divider?.suppressOrdinalNumber" [class]="divider?.lineClass">
+    <div class="line mt-2" [style.height.px]="height" *ngIf="divider?.suppressOrdinalNumber" [class]="divider?.lineClass">
+    </div>
     <div *ngIf="!divider?.suppressOrdinalNumber" class="d-flex align-items-center">
-        <hr [size]="size+'px'" class="flex-grow-1" [class]="divider?.lineClass" />
+        <div class="flex-grow-1 line" [style.height.px]="height" [class]="divider?.lineClass"></div>
         <span class="px-2" [class]="divider?.ordinalNumberClass || 'text-secondary'">
             {{counter+1|ordinal}}
         </span>
-        <hr [size]="size+'px'" size="100px" class="flex-grow-1" [class]="divider?.lineClass" />
+        <div [style.height.px]="height" class="flex-grow-1 line" [class]="divider?.lineClass"></div>
     </div>
 </div>

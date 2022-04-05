@@ -8,8 +8,6 @@ import { FormArrayItemComponent } from './form-control/form-array-item/form-arra
 import { FormArrayComponent } from './form-control/form-array/form-array.component';
 import { ComponentModule } from './shared/component/component.module';
 import { DynamicFormBuilderComponent } from './dynamic-form-builder.component';
-
-
 @NgModule({
   declarations: [
     DynamicFormBuilderComponent,

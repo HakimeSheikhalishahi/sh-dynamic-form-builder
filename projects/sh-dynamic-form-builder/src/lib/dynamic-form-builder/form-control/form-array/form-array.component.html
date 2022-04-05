@@ -9,7 +9,7 @@
                     <lib-divider *ngIf="!field?.formArray?.divider?.suppress" [divider]="field?.formArray?.divider!" [counter]="i">
                     </lib-divider>
                     <div class="text-end del-btn">
-                        <i class="bi bi-x-lg text-danger" (click)="removeform(i)"></i>
+                        <i class="bi bi-x-lg text-danger" aria-hidden="true" (click)="removeform(i)"></i>
                     </div>
                     <div class="form-group row">
                         <ng-container *ngFor="let field of field.formArray?.fields">

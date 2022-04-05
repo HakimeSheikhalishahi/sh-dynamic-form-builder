@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IFormArrayFieldItem } from '../model/form-array-field-item.interface';
 import { IMainFieldItem } from '../model/main-field-item.interface';
-
 @Injectable({
   providedIn: 'root'
 })

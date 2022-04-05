@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IDivider } from '../../model/divider.interface';
-
 @Component({
   selector: 'lib-divider',
   templateUrl: './divider.component.html',
@@ -8,12 +7,10 @@ import { IDivider } from '../../model/divider.interface';
 })
 export class DividerComponent implements OnInit {
   @Input() counter: number = 0;
-  // @Input() field!: IMainFieldItem;
   @Input() divider!: IDivider;
-  size: string = '';
+  height: number = 0;
   constructor() { }
-
   ngOnInit(): void {
-    this.size = (this.divider?.height || 3) + 'px';
+    this.height = this.divider?.height || 1;
   }
 }

@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
-
 @Component({
   selector: 'lib-date',
   templateUrl: './date.component.html',

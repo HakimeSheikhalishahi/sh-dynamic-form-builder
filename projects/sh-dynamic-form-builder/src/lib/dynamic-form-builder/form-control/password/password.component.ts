@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
-
 @Component({
   selector: 'lib-password',
   templateUrl: './password.component.html',
@@ -15,7 +14,6 @@ export class PasswordComponent {
     return this.form?.controls[this.field?.name] as FormControl;
   }
   constructor() { }
-
   public toggle(): void {
     this.show = !this.show;
   }

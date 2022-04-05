@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { IFormArrayFieldItem } from '../../shared/model/form-array-field-item.interface';
-
 @Component({
   selector: 'lib-form-array-item',
   templateUrl: './form-array-item.component.html',
@@ -18,5 +17,4 @@ export class FormArrayItemComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.form as FormGroup;
   }
-
 }

@@ -4,7 +4,7 @@
  generate form controls and form array.
  </p>
  
- ![todo](https://user-images.githubusercontent.com/51107856/161571161-511dea0d-b587-4cfb-aeee-fb1fb531e5d3.png?raw=true "Dynamic Form Builder")
+ ![todo](https://user-images.githubusercontent.com/51107856/161700673-ae6c8dd6-2a3a-4b5b-82c3-2ddf41b7d041.png?raw=true "Dynamic Form Builder")
 
 # Field types
 

@@ -29,9 +29,9 @@ describe('RadioComponent', () => {
       const errorServiceStub: ErrorService = fixture.debugElement.injector.get(
         ErrorService
       );
-      spyOn(errorServiceStub, 'radioOption').and.callThrough();
+      spyOn(errorServiceStub, 'option').and.callThrough();
       component.ngOnInit();
-      expect(errorServiceStub.radioOption).toHaveBeenCalled();
+      expect(errorServiceStub.option).toHaveBeenCalled();
     });
   });
 });

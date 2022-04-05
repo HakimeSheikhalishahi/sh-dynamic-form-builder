@@ -1,6 +1,6 @@
 {
   "name": "sh-dynamic-form-builder",
-  "version": "2.3.2",
+  "version": "2.4.3",
   "author": {
     "name": "Hakime sheikhalishahi",
     "email": "h.sheykhalishahi@gmail.com",
@@ -9,11 +9,7 @@
   "description": "Dynamic form builder generate form controls and form array",
   "license": "MIT",
   "repository": {
-    "type": "git",
     "url": "git+https://github.com/HakimeSheikhalishahi/sh-dynamic-form-builder.git"
-  },
-  "bugs": {
-    "url": "https://github.com/HakimeSheikhalishahi/sh-dynamic-form-builder/issues"
   },
   "homepage": "https://github.com/HakimeSheikhalishahi/sh-dynamic-form-builder#readme",
   "peerDependencies": {
@@ -46,6 +42,7 @@
     "builder",
     "form-builder",
     "form-generator",
-    "reactiveForm"
+    "reactiveForm",
+    "typescript"
   ]
 }

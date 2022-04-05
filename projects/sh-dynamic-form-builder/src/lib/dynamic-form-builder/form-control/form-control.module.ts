@@ -9,7 +9,6 @@ import { RadioComponent } from './radio/radio.component';
 import { RangeComponent } from './range/range.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PasswordComponent } from './password/password.component';
-
 const DECLARATIONS = [
   CheckboxComponent,
   DropdownComponent,
@@ -20,7 +19,6 @@ const DECLARATIONS = [
   RangeComponent,
   PasswordComponent
 ]
-
 @NgModule({
   declarations: [
     DECLARATIONS,

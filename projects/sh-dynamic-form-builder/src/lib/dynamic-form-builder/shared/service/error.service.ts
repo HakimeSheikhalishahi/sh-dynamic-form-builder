@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorService {
-
   constructor() { }
   private show(msg: string): void {
     console.error('SH Form Builder:', msg);
   }
-  public radioOption(fieldName: string): void {
+  public option(fieldName: string): void {
     const msg = `${fieldName} doesn't have any option. please set Option property`;
     this.show(msg);
   }

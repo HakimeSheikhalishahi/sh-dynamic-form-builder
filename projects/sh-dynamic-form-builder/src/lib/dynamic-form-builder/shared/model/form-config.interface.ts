@@ -1,6 +1,5 @@
 import { IButtonSetting } from "./button-setting.interface";
 import { IMainFieldItem } from "./main-field-item.interface";
-
 export interface IFormConfig {
     /**Form title */
     title?: string;

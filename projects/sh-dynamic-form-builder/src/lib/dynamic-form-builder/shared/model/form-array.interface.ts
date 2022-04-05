@@ -1,6 +1,5 @@
 import { IDivider } from "./divider.interface";
 import { IFormArrayFieldItem } from "./form-array-field-item.interface";
-
 export interface IFormArray {
     /**Define field for form array */
     fields: IFormArrayFieldItem[];

@@ -1,12 +1,12 @@
 {
   "name": "sh-dynamic-form-builder",
-  "version": "2.4.3",
+  "version": "2.4.5",
   "author": {
     "name": "Hakime sheikhalishahi",
     "email": "h.sheykhalishahi@gmail.com",
     "url": "http://www.linkedin.com/in/hakime-sheikhalishahi"
   },
-  "description": "Dynamic form builder generate form controls and form array",
+  "description": "Dynamic form builder, generate form controls and form array",
   "license": "MIT",
   "repository": {
     "url": "git+https://github.com/HakimeSheikhalishahi/sh-dynamic-form-builder.git"

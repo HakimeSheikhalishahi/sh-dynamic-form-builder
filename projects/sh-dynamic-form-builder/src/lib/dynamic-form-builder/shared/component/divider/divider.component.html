@@ -1,11 +1,12 @@
 <div class="pt-1">
-    <div class="line mt-2" [style.height.px]="height" *ngIf="divider?.suppressOrdinalNumber" [class]="divider?.lineClass">
+    <div class="line mt-2" [style.height.px]="height" *ngIf="divider?.suppressOrdinalNumber"
+        [ngClass]="divider?.lineClass||''">
     </div>
     <div *ngIf="!divider?.suppressOrdinalNumber" class="d-flex align-items-center">
-        <div class="flex-grow-1 line" [style.height.px]="height" [class]="divider?.lineClass"></div>
-        <span class="px-2" [class]="divider?.ordinalNumberClass || 'text-secondary'">
+        <div class="flex-grow-1 line" [style.height.px]="height" [ngClass]="divider?.lineClass||''"></div>
+        <span class="px-2" [ngClass]="divider?.ordinalNumberClass || 'text-secondary'">
             {{counter+1|ordinal}}
         </span>
-        <div [style.height.px]="height" class="flex-grow-1 line" [class]="divider?.lineClass"></div>
+        <div [style.height.px]="height" class="flex-grow-1 line" [ngClass]="divider?.lineClass||''"></div>
     </div>
 </div>

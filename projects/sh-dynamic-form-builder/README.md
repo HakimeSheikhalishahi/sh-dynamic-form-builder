@@ -5,6 +5,12 @@
  </p>
  
  ![todo](https://user-images.githubusercontent.com/51107856/161700673-ae6c8dd6-2a3a-4b5b-82c3-2ddf41b7d041.png?raw=true "Dynamic Form Builder")
+# Demo
+
+<a href='https://stackblitz.com/edit/angular-masgfg?file=src%2Fapp%2Fapp.component.html'>
+stackblitz
+</a>
+
 
 # Field types
 
@@ -81,6 +87,12 @@ export class AppModule {}
     "./node_modules/bootstrap/scss/bootstrap.scss",
     "./node_modules/bootstrap-icons/font/bootstrap-icons.scss"
 ]
+```
+
+If Bootstrap icons don't work, you should import them in global style.
+
+```css
+@import "~bootstrap-icons/font/bootstrap-icons";
 ```
 
 # How to use?

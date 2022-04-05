@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1 *ngIf="config?.title" [class]="config.titleClass">{{config?.title}}</h1>
+            <h1 *ngIf="config?.title" [ngClass]="config?.titleClass || ''">{{config?.title}}</h1>
             <form [formGroup]="formGroup" class="form">
                 <lib-dynamic-form *ngIf="config?.fields" [formGroup]="formGroup" [fields]="config.fields">
                 </lib-dynamic-form>
@@ -10,7 +10,7 @@
     </div>
     <div class="row">
         <div class="col my-2">
-            <div *ngIf="!config?.buttonSetting?.fullWidthButtons" class="d-flex flex-row" [class]="buttonsAlign">
+            <div *ngIf="!config?.buttonSetting?.fullWidthButtons" class="d-flex flex-row" [ngClass]="buttonsAlign">
                 <ng-container *ngTemplateOutlet="buttons"></ng-container>
             </div>
             <div *ngIf="config?.buttonSetting?.fullWidthButtons" class="d-grid gap-2">
@@ -21,7 +21,7 @@
 </div>
 <ng-template #buttons>
     <ng-container *ngFor="let btn of config?.buttonSetting?.buttons">
-        <button class="btn btn-block margin" [class]="btnColor[btn.bgColor]"
+        <button class="btn btn-block margin" [ngClass]="btnColor[btn.bgColor]"
             [disabled]="isSubmit && btn.type==buttonType.Submit" type="button" (mousedown)="action(btn)">
             {{btn.caption}}
         </button>

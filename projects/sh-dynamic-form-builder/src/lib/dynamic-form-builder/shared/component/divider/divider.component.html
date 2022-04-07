@@ -1,5 +1,5 @@
 <div class="pt-1">
-    <div class="line mt-2" [style.height.px]="height" *ngIf="divider?.suppressOrdinalNumber"
+    <div *ngIf="divider?.suppressOrdinalNumber" class="line mt-2" [style.height.px]="height"
         [ngClass]="divider?.lineClass||''">
     </div>
     <div *ngIf="!divider?.suppressOrdinalNumber" class="d-flex align-items-center">

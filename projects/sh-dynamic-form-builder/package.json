@@ -1,6 +1,6 @@
 {
   "name": "sh-dynamic-form-builder",
-  "version": "2.4.5",
+  "version": "2.4.6",
   "author": {
     "name": "Hakime sheikhalishahi",
     "email": "h.sheykhalishahi@gmail.com",
@@ -30,12 +30,15 @@
     "components",
     "bootstrap",
     "responsive",
+    "responsive-form",
+    "angular-responsive-form",
     "layout",
     "dynamic-form",
     "reactive-form",
     "form",
     "design",
     "formGroup",
+    "angular-formGroup",
     "form-array",
     "form-control",
     "dynamic",
@@ -43,6 +46,14 @@
     "form-builder",
     "form-generator",
     "reactiveForm",
-    "typescript"
+    "typescript",
+    "angular-dynamic-form",
+    "angular-dynamic-reactive-form",
+    "dynamic-validation",
+    "angular-form-validation",
+    "form-validation",
+    "reactive-form-validation",
+    "dynamic-form-array",
+    "angular-dynamic-control"
   ]
 }

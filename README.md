@@ -350,8 +350,6 @@ private onUpload(event: any): void {
 # Donate
 If you like my work and I save your time you can buy me a 🍺 or 🍕
 
-My MetaMask address :
-`0x31467bF24aAda74477C9c7F637d08873C1837F71`
 
 # License
 

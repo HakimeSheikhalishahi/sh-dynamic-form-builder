@@ -13,13 +13,13 @@ stackblitz
 
 # Some Features
 
-- `Ability to define form fields by` [type](#field-types)
-- `Ability to define as many form arrays with as many fields you want for each`
-- `Has a config for Add button of form array`
-- `Ability to define the validation rules and error message of the field and the form array fields as desired`
-- `has a config for form array divider`
-- `Ability to define Send, Reset and Cancel buttons with the desired title, color, and order`
-- `Bootstrap style`
+- Ability to define `form fields` by [type](#field-types)
+- Ability to define as many `form arrays` with as many fields you want for each
+- Has a config for `Add button` of form array
+- Ability to define the `validation` rules and error message of the field and the form array fields as desired
+- Has a config for `form array divider`
+- Ability to define Send, Reset and Cancel `buttons` with the desired title, color, and order
+- `Bootstrap` style
 
 # Field types
 
@@ -347,10 +347,9 @@ private onUpload(event: any): void {
 
 - http://www.linkedin.com/in/hakime-sheikhalishahi
 - h.sheykhalishahi@gmail.com
-
 # Donate
-
 If you like my work and I save your time you can buy me a 🍺 or 🍕
+
 My MetaMask address :
 `0x31467bF24aAda74477C9c7F637d08873C1837F71`
 

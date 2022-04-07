@@ -13,13 +13,13 @@ stackblitz
 
 # Some Features
 
-- Ability to define `form fields` by [type](#field-types)
-- Ability to define as many `form arrays` with as many fields you want for each
-- Has a config for `Add button` of form array
-- Ability to define the `validation` rules and error message of the field and the form array fields as desired
-- Has a config for `form array divider`
-- Ability to define Send, Reset and Cancel `buttons` with the desired title, color, and order
-- `Bootstrap` style
+- Ability to define <b>form fields</b> by [type](#field-types)
+- Ability to define as many <b>form arrays</b> with as many fields you want for each
+- Has a config for <b>Add button</b> of form array
+- Ability to define the as many <b>validation</b> rules and error message of the field and the form array fields as desired
+- Has a config for <b>form array divider</b>
+- Ability to define Send, Reset and Cancel <b>buttons</b> with the desired title, color, and order
+- <b>Bootstrap</b> style
 
 # Field types
 

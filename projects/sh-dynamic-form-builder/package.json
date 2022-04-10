@@ -1,6 +1,6 @@
 {
   "name": "sh-dynamic-form-builder",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "author": {
     "name": "Hakime sheikhalishahi",
     "email": "h.sheykhalishahi@gmail.com",
@@ -55,6 +55,9 @@
     "reactive-form-validation",
     "dynamic-form-array",
     "angular-dynamic-control",
-    "angular-validation"
+    "angular-validation",
+    "angular-typescript",
+    "angular-reactive-form",
+    "angular-dynamic-reactive-form"
   ]
 }

@@ -12,7 +12,7 @@ stackblitz
 </a>
 
 # ✔️ Version 2.6.0
-- Custom sizing for control and label by values: small,medium and large.Default is medium.
+- Sizing for control and label by values: small,medium and large.Default is medium.
 - Red color added to color of buttons
 - Simple validation error style has added that shows red text without background color.You can reached it by setting simpleValidationError:true
 
@@ -283,10 +283,6 @@ private onUpload(event: any): void {
   | --------- | --------- | ------- | --------- | -------------------------------------------- |
   | [options] | `IOption` | `-`     | yes       | Define options: {key: string;label: string;} |
 
-- ## Range
-  | Name     | Type     | Default | Required? | Description      |
-  | -------- | -------- | ------- | --------- | ---------------- |
-  | rangeMin | `number` | `0`     | no        | value of the min |
 - ## Range
   | Name      | Type     | Default | Required? | Description       |
   | --------- | -------- | ------- | --------- | ----------------- |

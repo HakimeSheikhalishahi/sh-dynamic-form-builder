@@ -54,6 +54,7 @@
     "form-validation",
     "reactive-form-validation",
     "dynamic-form-array",
-    "angular-dynamic-control"
+    "angular-dynamic-control",
+    "angular-validation"
   ]
 }

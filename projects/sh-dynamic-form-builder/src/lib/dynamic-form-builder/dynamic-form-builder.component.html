@@ -21,7 +21,7 @@
 </div>
 <ng-template #buttons>
     <ng-container *ngFor="let btn of config?.buttonSetting?.buttons">
-        <button class="btn btn-block margin" [ngClass]="btnColor[btn.bgColor]"
+        <button class="btn btn-block margin" [ngClass]="[btnColor[btn.bgColor],'btn-'+size]"
             [disabled]="isSubmit && btn.type==buttonType.Submit" type="button" (mousedown)="action(btn)">
             {{btn.caption}}
         </button>

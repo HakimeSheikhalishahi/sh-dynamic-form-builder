@@ -14,6 +14,9 @@ export class FormArrayComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({});
   formArrayName: string = '';
   addButtonBgColor: string = 'btn-secondary';
+  get size(): string {
+    return this.formService.elementSize();
+  }
   get formArray(): FormArray {
     return this.form.get(this.field?.name) as FormArray;
   }

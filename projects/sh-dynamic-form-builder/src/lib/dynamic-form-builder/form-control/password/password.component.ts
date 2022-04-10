@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
+import { FormService } from '../../shared/service/form.service';
 @Component({
   selector: 'lib-password',
   templateUrl: './password.component.html',
@@ -13,7 +14,10 @@ export class PasswordComponent {
   get control(): FormControl {
     return this.form?.controls[this.field?.name] as FormControl;
   }
-  constructor() { }
+  get size(): string {
+    return this.formService.elementSize();
+  }
+  constructor(private formService: FormService) { }
   public toggle(): void {
     this.show = !this.show;
   }

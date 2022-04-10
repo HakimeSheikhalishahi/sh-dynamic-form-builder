@@ -1,18 +1,26 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IFormArrayFieldItem } from '../model/form-array-field-item.interface';
+import { IFormControlConfig } from '../model/form-control-config.interface';
 import { IMainFieldItem } from '../model/main-field-item.interface';
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
+  formControlConfig: IFormControlConfig = {};
   btnColor = {
     gray: 'btn-secondary',
     green: 'btn-success',
     blue: 'btn-primary',
+    red: 'btn-danger',
     orange: 'btn-warning',
     light: 'btn-light',
     dark: 'btn-dark'
+  }
+  size = {
+    small: 'sm',
+    medium: '',
+    large: 'lg'
   }
   constructor() { }
   setField(field: IMainFieldItem, formGroup: FormGroup) {
@@ -77,5 +85,11 @@ export class FormService {
       this.setField(val, formGroup);
     });
     return formGroup;
+  }
+  public elementSize(): string {
+    return this.size?.[this.formControlConfig?.elementSize || 'medium'];
+  }
+  public hasSimpleValidationError(): boolean {
+    return this.formControlConfig?.simpleValidationError || false;
   }
 }

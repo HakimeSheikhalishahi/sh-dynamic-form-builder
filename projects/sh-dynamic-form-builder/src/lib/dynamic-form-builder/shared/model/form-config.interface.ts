@@ -1,4 +1,5 @@
 import { IButtonSetting } from "./button-setting.interface";
+import { IFormControlConfig } from "./form-control-config.interface";
 import { IMainFieldItem } from "./main-field-item.interface";
 export interface IFormConfig {
     /**Form title */
@@ -9,4 +10,6 @@ export interface IFormConfig {
     fields: IMainFieldItem[];
     /**Button setting*/
     buttonSetting: IButtonSetting;
+    /**Form controls configuration */
+    formControlConfig?: IFormControlConfig;
 }

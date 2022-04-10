@@ -27,6 +27,7 @@ export class DynamicFormBuilderComponent implements OnInit {
   public formGroup!: FormGroup;
   url: string | ArrayBuffer | null = null;
   buttonsAlign: string = '';
+  size: string = '';
   constructor(private formBuilder: FormBuilder,
     private changeDetectorRef: ChangeDetectorRef,
     private formService: FormService,
@@ -37,6 +38,8 @@ export class DynamicFormBuilderComponent implements OnInit {
     this.init();
   }
   private init(): void {
+    this.formService.formControlConfig = this.config.formControlConfig || {};
+    this.size = this.formService.elementSize();
     this.setBtnAlighn();
     this.setupForm();
   }
@@ -98,7 +101,7 @@ export class DynamicFormBuilderComponent implements OnInit {
     }
   }
   public submitAction(): void {
-    if(!this.formGroup.valid){
+    if (!this.formGroup.valid) {
       this.formGroup.markAllAsTouched();
       return;
     }

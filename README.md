@@ -11,6 +11,11 @@
 stackblitz
 </a>
 
+# ✔️ Version 2.6.0
+- Custom sizing for control and label by values: small,medium and large.Default is medium.
+- Red color added to color of buttons
+- Simple validation error style has added that shows red text without background color.You can reached it by setting simpleValidationError:true
+
 # Some Features
 
 - Ability to define <b>form fields</b> by [type](#field-types)
@@ -216,12 +221,20 @@ private onUpload(event: any): void {
 
 - ## Config
 
-| Name                             | Type             | Default | Required? | Description                                                                                                     |
-| -------------------------------- | ---------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
-| [fields](#fields)                | `IMainFieldItem` | `-`     | yes       | Form fields                                                                                                     |
-| title                            | `string`         | `-`     | no        | Form title                                                                                                      |
-| titleClass                       | `string`         | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class1 class1' |
-| [buttonSetting](#button-setting) | `IButtonSetting` | `{}`    | yes       | Button setting                                                                                                  |
+| Name                                      | Type                 | Default | Required? | Description                                                                                                     |
+| ----------------------------------------- | -------------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
+| [fields](#fields)                         | `IMainFieldItem`     | `-`     | yes       | Form fields                                                                                                     |
+| title                                     | `string`             | `-`     | no        | Form title                                                                                                      |
+| titleClass                                | `string`             | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class1 class1' |
+| [buttonSetting](#button-setting)          | `IButtonSetting`     | `{}`    | yes       | Button setting                                                                                                  |
+| [formControlConfig](#form-control-config) | `IFormControlConfig` | `{}`    | yes       | Form controls configuration                                                                                     |
+
+### Form control config
+
+| Name                  | Type      | Default  | Required? | Description                                                       |
+| --------------------- | --------- | -------- | --------- | ----------------------------------------------------------------- |
+| elementSize           | `string`  | `medium` | no        | Control size and label size                                       |
+| simpleValidationError | `boolean` | `false`  | no        | Red text without background color as the validation error message |
 
 # Output
 
@@ -292,7 +305,7 @@ private onUpload(event: any): void {
     | ------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------- |
     | [fields]            | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                 |
     | simpleAddButton     | `boolean`             | `false` | no        | Only icon on button, without text                                |
-    | addButtonBGColor    | `string`              | `gray`  | no        | Allowed values: gray, green, blue, orange, light and dark        |
+    | addButtonBGColor    | `string`              | `gray`  | no        | Allowed values: gray, green, blue, red, orange, light and dark   |
     | [divider](#divider) | `IDivider`            | `-`     | no        | doesn't show an ordinal number in the center of the divider line |
 
     - #### Divider
@@ -314,11 +327,11 @@ private onUpload(event: any): void {
 
 - # Button properties
 
-| Name    | Type     | Required? | Description                                            |
-| ------- | -------- | --------- | ------------------------------------------------------ |
-| type    | `string` | yes       | Allowed values: submit, cancel and reset               |
-| caption | `string` | yes       | Button caption                                         |
-| bgColor | `string` | yes       | Allowed values: gray ,green,blue,orange,light and dark |
+| Name    | Type     | Required? | Description                                                    |
+| ------- | -------- | --------- | -------------------------------------------------------------- |
+| type    | `string` | yes       | Allowed values: submit, cancel and reset                       |
+| caption | `string` | yes       | Button caption                                                 |
+| bgColor | `string` | yes       | Allowed values: gray, green, blue, red, orange, light and dark |
 
 # Validators
 
@@ -347,10 +360,12 @@ private onUpload(event: any): void {
 
 - http://www.linkedin.com/in/hakime-sheikhalishahi
 - h.sheykhalishahi@gmail.com
+
 # Donate
+
 If you like my work and I save your time you can buy me a 🍺 or 🍕
 
-My Trust Wallet address | Ethereum  :
+My Trust Wallet address | Ethereum :
 `0x04e125a00BCd45A4DD23279DcAfF1eAFd49DbEf6`
 
 # License

@@ -1,5 +1,6 @@
 <div class="form-group row">
-    <label *ngIf="field?.type!=='form-array'" class="form-label" [attr.for]="field?.label">
+    <label *ngIf="field?.type!=='form-array'" class="form-label" [ngClass]="'col-form-label-'+size"
+        [attr.for]="field?.label">
         {{field?.label}}
         <strong class="text-danger" *ngIf="required">*</strong>
     </label>
@@ -20,14 +21,7 @@
         <lib-date *ngSwitchCase="'week'" [field]="field" [form]="form"></lib-date>
         <lib-date *ngSwitchCase="'month'" [field]="field" [form]="form"></lib-date>
         <ng-container *ngIf="field?.type!=='form-array'">
-            <div class="alert alert-danger my-1 p-2 fadeInDown animated"
-                *ngIf="!control.valid && (control.dirty || control.touched)" [style.width.px]="field.width || '100%'">
-                <ng-container *ngFor="let err of field.validators">
-                    <ng-container *ngIf="form.get(field.name)?.getError(err.rule!=='requiredTrue'?err.rule:'required')">
-                        {{err.msg}}
-                    </ng-container>
-                </ng-container>
-            </div>
+            <lib-validation-error [control]="control" [field]="field"></lib-validation-error>
         </ng-container>
     </div>
 </div>

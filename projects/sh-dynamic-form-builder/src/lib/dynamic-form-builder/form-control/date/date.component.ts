@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { IMainFieldItem } from '../../shared/model/main-field-item.interface';
+import { FormService } from '../../shared/service/form.service';
 @Component({
   selector: 'lib-date',
   templateUrl: './date.component.html',
@@ -12,5 +13,8 @@ export class DateComponent {
   get control(): FormControl {
     return this.form?.controls[this.field?.name] as FormControl;
   }
-  constructor() { }
+  get size(): string {
+    return this.formService.elementSize();
+  }
+  constructor(private formService: FormService) { }
 }

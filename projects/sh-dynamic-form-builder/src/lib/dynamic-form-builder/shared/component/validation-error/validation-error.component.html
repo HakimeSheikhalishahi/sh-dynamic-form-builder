@@ -1,27 +1,22 @@
-<ng-container *ngIf="field?.type!=='form-array'">
-    <ng-container *ngIf="!isSimpleValidationError">
+<ng-container *ngIf="field?.type!=='form-array' && !control.valid && (control.dirty || control.touched)">
+    <ng-container *ngIf="!simple else simpleError">
         <ng-container *ngTemplateOutlet="error"></ng-container>
-    </ng-container>
-    <ng-container *ngIf="isSimpleValidationError">
-        <ng-container *ngTemplateOutlet="simpleError"></ng-container>
     </ng-container>
 </ng-container>
 <ng-template #error>
-    <div class="alert alert-danger my-1 p-2 fadeInDown animated"
-        *ngIf="!control.valid && (control.dirty || control.touched)" [style.width.px]="field.width || '100%'">
-        <ng-container *ngFor="let err of field.validators">
-            <ng-container *ngIf="control?.getError(err.rule!=='requiredTrue'?err.rule:'required')">
-                {{err.msg}}
-            </ng-container>
-        </ng-container>
+    <div class="alert alert-danger my-1 p-2 fadeInDown animated" [style.width.px]="field.width || '100%'">
+        <ng-container *ngTemplateOutlet="message"></ng-container>
     </div>
 </ng-template>
 <ng-template #simpleError>
-    <small class="text-danger" *ngIf="!control.valid && (control.dirty || control.touched)">
-        <ng-container *ngFor="let err of field.validators">
-            <ng-container *ngIf="control?.getError(err.rule!=='requiredTrue'?err.rule:'required')">
-                {{err.msg}}
-            </ng-container>
-        </ng-container>
+    <small class="text-danger">
+        <ng-container *ngTemplateOutlet="message"></ng-container>
     </small>
+</ng-template>
+<ng-template #message>
+    <ng-container *ngFor="let err of field.validators">
+        <ng-container *ngIf="control?.getError(err.rule!=='requiredTrue'?err.rule:'required')">
+            {{err.msg}}
+        </ng-container>
+    </ng-container>
 </ng-template>

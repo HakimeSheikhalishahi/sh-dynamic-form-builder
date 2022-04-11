@@ -11,7 +11,7 @@ import { FormService } from '../../service/form.service';
 export class ValidationErrorComponent {
   @Input() field!: IMainFieldItem;
   @Input() control!: FormControl;
-  get isSimpleValidationError(): boolean {
+  get simple(): boolean {
     return this.formService.hasSimpleValidationError();
   }
   constructor(private formService: FormService) { }

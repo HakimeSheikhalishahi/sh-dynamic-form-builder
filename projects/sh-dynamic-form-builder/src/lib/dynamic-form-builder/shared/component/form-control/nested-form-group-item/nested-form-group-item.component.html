@@ -1,6 +1,8 @@
-<label class="form-label" [ngClass]="'col-form-label'+ (size && '-'+size)">
-    {{field?.label}}
-    <strong class="text-danger" *ngIf="required">*</strong>
-</label>
-<lib-basic-field [field]="field" [form]="form"></lib-basic-field>
-<lib-validation-error [control]="control" [field]="field"></lib-validation-error>
+<div class="form-group row" [formGroup]="form">
+    <label class="form-label" [ngClass]="'col-form-label'+ (size && '-'+size)">
+        {{field?.label}}
+        <strong class="text-danger" *ngIf="required">*</strong>
+    </label>
+    <lib-basic-field [field]="field" [form]="form"></lib-basic-field>
+    <lib-validation-error [control]="control" [field]="field"></lib-validation-error>
+</div>

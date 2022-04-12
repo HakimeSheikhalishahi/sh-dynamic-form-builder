@@ -4,16 +4,22 @@
  generate form controls and form array.
  </p>
  
- ![todo](https://user-images.githubusercontent.com/51107856/161700673-ae6c8dd6-2a3a-4b5b-82c3-2ddf41b7d041.png?raw=true "Dynamic Form Builder")
+ ![todo](https://user-images.githubusercontent.com/51107856/162959789-21243f3c-e5ad-4bad-abf6-9fe602653c44.png?raw=true "Dynamic Form Builder")
 # Demo
 
 <a href='https://stackblitz.com/edit/angular-masgfg?file=src%2Fapp%2Fapp.component.html'>
 stackblitz
 </a>
 
+# ✔️ Version 2.7.0
+
+- Customizing form array title by setting titleClass property
+- Ability to define as many <b>form group</b> with as many fields you want for each
+- Setting full with buttons for mobile and another device size by setting fullWidthButtons property
+
 # ✔️ Version 2.6.0
 
-- Sizing for control and label by values: small,medium and large.Default is medium.
+- Sizing for control and label by values: small,medium and large.Default is medium
 - Red color added to color of buttons
 - Simple validation error style has added that shows red text without background color.You can reached it by setting simpleValidationError:true
 
@@ -21,10 +27,12 @@ stackblitz
 
 - Ability to define <b>form fields</b> by [type](#field-types)
 - Ability to define as many <b>form arrays</b> with as many fields you want for each
+- Ability to define as many <b>form group</b> with as many fields you want for each
 - Has a config for <b>Add button</b> of form array
 - Ability to define the as many <b>validation</b> rules and error message of the field and the form array fields as desired
 - Has a config for <b>form array divider</b>
 - Ability to define Send, Reset and Cancel <b>buttons</b> with the desired title, color, and order
+- Binding form by object in edit mode
 - <b>Bootstrap</b> style
 
 # Field types
@@ -44,6 +52,7 @@ stackblitz
 - `Week`
 - `Month`
 - `Form array`
+- `Form group`
 
 ## Table of contents
 
@@ -166,7 +175,7 @@ config: IFormConfig = {
       }
       ...
         buttonSetting: {
-      fullWidthButtons: true,
+      fullWidthButtons: 'only-mobile',
       buttons:
         [
           { type: 'submit', caption: 'Submit', bgColor: 'blue' },
@@ -230,7 +239,7 @@ private onUpload(event: any): void {
 | [buttonSetting](#button-setting)          | `IButtonSetting`     | `{}`    | yes       | Button setting                                                                                                  |
 | [formControlConfig](#form-control-config) | `IFormControlConfig` | `{}`    | yes       | Form controls configuration                                                                                     |
 
-### Form control config
+- ### Form control config
 
 | Name                  | Type      | Default  | Required? | Description                                                       |
 | --------------------- | --------- | -------- | --------- | ----------------------------------------------------------------- |
@@ -246,16 +255,16 @@ private onUpload(event: any): void {
 
 # Field properties and methods
 
-| Name                        | Type               | Default | Required? | Description                                                                                                                                   |
-| --------------------------- | ------------------ | ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| type                        | `string`           | `-`     | yes       | Allowed values: text, range, number, password, color, dropdown, radio, checkbox, file, date, datetime-local, time, week, month and form-array |
-| name                        | `string`           | `-`     | yes       | Form control name                                                                                                                             |
-| defaultValue                | `any`              | `-`     | no        | Form control default value                                                                                                                    |
-| placeholder                 | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                                         |
-| [[validators]](#Validators) | `IValidationRules` | `-`     | no        | Set validator rules and error messages                                                                                                        |
-| id                          | `string`           | `-`     | no        | Element id                                                                                                                                    |
-| width                       | `number`           | `100%`  | no        | Width of Control                                                                                                                              |
-| disable                     | `boolean`          | `false` | no        | Disable control                                                                                                                               |
+| Name                        | Type               | Default | Required? | Description                                                                                                                                                                               |
+| --------------------------- | ------------------ | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type                        | `string`           | `-`     | yes       | Allowed values: `text`, `range`, `number`, `password`, `color`, `dropdown`, `radio`, `checkbox`, `file`, `date`, `datetime-local`, `time`, `week`, `month`, `form-group` and `form-array` |
+| name                        | `string`           | `-`     | yes       | Form control name                                                                                                                                                                         |
+| defaultValue                | `any`              | `-`     | no        | Form control default value                                                                                                                                                                |
+| placeholder                 | `string`           | `-`     | no        | Usable for text, number, password, dropdown and email                                                                                                                                     |
+| [[validators]](#Validators) | `IValidationRules` | `-`     | no        | Set validator rules and error messages                                                                                                                                                    |
+| id                          | `string`           | `-`     | no        | Element id                                                                                                                                                                                |
+| width                       | `number`           | `100%`  | no        | Width of Control                                                                                                                                                                          |
+| disable                     | `boolean`          | `false` | no        | Disable control                                                                                                                                                                           |
 
 - ## File
 
@@ -285,25 +294,41 @@ private onUpload(event: any): void {
   | [options] | `IOption` | `-`     | yes       | Define options: {key: string;label: string;} |
 
 - ## Range
+
   | Name      | Type     | Default | Required? | Description       |
   | --------- | -------- | ------- | --------- | ----------------- |
   | rangeMin  | `number` | `0`     | no        | value of the min  |
   | rangeMax  | `number` | `100`   | no        | value of the max  |
   | rangeStep | `number` | `1`     | no        | value of the step |
+
+  - ## Form-group
+
+  | Name                    | Type         | Default | Required? | Description                           |
+  | ----------------------- | ------------ | ------- | --------- | ------------------------------------- |
+  | [formGroup](#formGroup) | `IFormGroup` | `-`     | no        | Set form group fields and validations |
+
+  - ### FormGroup
+
+  | Name       | Type                  | Default | Required? | Description                                                                                                           |
+  | ---------- | --------------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------------- |
+  | [fields]   | `IFormGroupFieldItem` | `-`     | yes       | Form group fields                                                                                                     |
+  | titleClass | `string`              | `-`     | no        | Set style for form group title, you can add one or more class name split by space. for example:'class1 class2 class3' |
+  | showInCard | `boolean`             | `false` | no        | Show in bootstrap card                                                                                                |
+
 - ## Form-array
 
   | Name                    | Type         | Default | Required? | Description                           |
   | ----------------------- | ------------ | ------- | --------- | ------------------------------------- |
-  | [formArray](#FormArray) | `IFormArray` | `-`     | no        | Set form array fields and validations |
+  | [formArray](#formArray) | `IFormArray` | `-`     | no        | Set form array fields and validations |
 
   - ### FormArray
 
-    | Name                | Type                  | Default | Required? | Description                                                      |
-    | ------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------- |
-    | [fields]            | `IFormArrayFieldItem` | `-`     | yes       | Form array fiels                                                 |
-    | simpleAddButton     | `boolean`             | `false` | no        | Only icon on button, without text                                |
-    | addButtonBGColor    | `string`              | `gray`  | no        | Allowed values: gray, green, blue, red, orange, light and dark   |
-    | [divider](#divider) | `IDivider`            | `-`     | no        | doesn't show an ordinal number in the center of the divider line |
+    | Name                | Type                  | Default | Required? | Description                                                                  |
+    | ------------------- | --------------------- | ------- | --------- | ---------------------------------------------------------------------------- |
+    | [fields]            | `IFormArrayFieldItem` | `-`     | yes       | Form array fields                                                            |
+    | simpleAddButton     | `boolean`             | `false` | no        | Only icon on button, without text                                            |
+    | addButtonBGColor    | `string`              | `gray`  | no        | Allowed values: `gray`, `green`, `blue`, `red`, `orange`, `light` and `dark` |
+    | [divider](#divider) | `IDivider`            | `-`     | no        | doesn't show an ordinal number in the center of the divider line             |
 
     - #### Divider
       | Name                  | Type      | Default | Required? | Description                                                                                                                              |
@@ -316,19 +341,19 @@ private onUpload(event: any): void {
 
 # Button setting
 
-| Name                            | Type      | Default | Required? | Description                                     |
-| ------------------------------- | --------- | ------- | --------- | ----------------------------------------------- |
-| [[buttons]](#button-properties) | `IButton` | `[]`    | yes       | The array of buttons, order by definition       |
-| buttonsAlign                    | `string`  | `left`  | no        | Usable when fullWidthButtons is false           |
-| fullWidthButtons                | `boolean` | `false` | no        | Buttons fill the entire width of the container. |
+| Name                            | Type      | Default | Required? | Description                                  |
+| ------------------------------- | --------- | ------- | --------- | -------------------------------------------- |
+| [[buttons]](#button-properties) | `IButton` | `[]`    | yes       | The array of buttons, order by definition    |
+| buttonsAlign                    | `string`  | `left`  | no        | Usable when fullWidthButtons is false        |
+| fullWidthButtons                | `string`  | `none`  | no        | Allowed values: `none`, `all`, `only-mobile` |
 
 - # Button properties
 
-| Name    | Type     | Required? | Description                                                    |
-| ------- | -------- | --------- | -------------------------------------------------------------- |
-| type    | `string` | yes       | Allowed values: submit, cancel and reset                       |
-| caption | `string` | yes       | Button caption                                                 |
-| bgColor | `string` | yes       | Allowed values: gray, green, blue, red, orange, light and dark |
+| Name    | Type     | Required? | Description                                                                  |
+| ------- | -------- | --------- | ---------------------------------------------------------------------------- |
+| type    | `string` | yes       | Allowed values: `submit`, `cancel` and `reset`                               |
+| caption | `string` | yes       | Button caption                                                               |
+| bgColor | `string` | yes       | Allowed values: `gray`, `green`, `blue`, `red`, `orange`, `light` and `dark` |
 
 # Validators
 

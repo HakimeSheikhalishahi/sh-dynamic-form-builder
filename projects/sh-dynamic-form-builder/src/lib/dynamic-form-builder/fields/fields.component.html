@@ -1,26 +1,14 @@
 <div class="form-group row">
-    <label *ngIf="field?.type!=='form-array'" class="form-label" [ngClass]="'col-form-label-'+size"
+    <label *ngIf="field?.type!=='form-array' && field?.type!=='form-group'" class="form-label" [ngClass]="'col-form-label'+ (size && '-'+size)"
         [attr.for]="field?.label">
         {{field?.label}}
         <strong class="text-danger" *ngIf="required">*</strong>
     </label>
-    <div class="" [ngSwitch]="field?.type">
-        <lib-form-array *ngSwitchCase="'form-array'" [field]="field" [form]="form"></lib-form-array>
-        <lib-input *ngSwitchCase="'text'" [field]="field" [form]="form"></lib-input>
-        <lib-range *ngSwitchCase="'range'" [field]="field" [form]="form"></lib-range>
-        <lib-input *ngSwitchCase="'number'" [field]="field" [form]="form"></lib-input>
-        <lib-password *ngSwitchCase="'password'" [field]="field" [form]="form"></lib-password>
-        <lib-input *ngSwitchCase="'color'" [field]="field" [form]="form"></lib-input>
-        <lib-dropdown *ngSwitchCase="'dropdown'" [field]="field" [form]="form"></lib-dropdown>
-        <lib-radio *ngSwitchCase="'radio'" [field]="field" [form]="form"></lib-radio>
-        <lib-checkbox *ngSwitchCase="'checkbox'" [field]="field" [form]="form"></lib-checkbox>
-        <lib-file *ngSwitchCase="'file'" [field]="field" [form]="form"></lib-file>
-        <lib-date *ngSwitchCase="'date'" [field]="field" [form]="form"></lib-date>
-        <lib-date *ngSwitchCase="'datetime-local'" [field]="field" [form]="form"></lib-date>
-        <lib-date *ngSwitchCase="'time'" [field]="field" [form]="form"></lib-date>
-        <lib-date *ngSwitchCase="'week'" [field]="field" [form]="form"></lib-date>
-        <lib-date *ngSwitchCase="'month'" [field]="field" [form]="form"></lib-date>
-        <ng-container *ngIf="field?.type!=='form-array'">
+    <div>
+        <lib-form-array *ngIf="field?.type=='form-array'" [field]="field" [form]="form"></lib-form-array>
+        <lib-nested-form-group *ngIf="field?.type=='form-group' && field?.formGroup" [control]="control" [field]="field" [form]="form"></lib-nested-form-group>
+        <ng-container *ngIf="field?.type!='form-array' && field?.type!='form-group'">
+            <lib-basic-field [field]="field" [form]="form"></lib-basic-field>
             <lib-validation-error [control]="control" [field]="field"></lib-validation-error>
         </ng-container>
     </div>

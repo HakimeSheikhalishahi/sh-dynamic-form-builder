@@ -10,18 +10,31 @@
     </div>
     <div class="row">
         <div class="col my-2">
-            <div *ngIf="!config?.buttonSetting?.fullWidthButtons" class="d-flex flex-row" [ngClass]="buttonsAlign">
-                <ng-container *ngTemplateOutlet="buttons"></ng-container>
+            <div class="d-none d-md-block">
+                <div *ngIf="fullWidthBtn==fullWidth.None || fullWidthBtn==fullWidth.OnlyMobile" class="d-flex flex-row"
+                    [ngClass]="buttonsAlign">
+                    <ng-container *ngTemplateOutlet="buttons"></ng-container>
+                </div>
+                <div *ngIf="fullWidthBtn==fullWidth.All" class="d-grid gap-2">
+                    <ng-container *ngTemplateOutlet="buttons"></ng-container>
+                </div>
             </div>
-            <div *ngIf="config?.buttonSetting?.fullWidthButtons" class="d-grid gap-2">
-                <ng-container *ngTemplateOutlet="buttons"></ng-container>
+            <div class="d-block d-md-none">
+                <div *ngIf="fullWidthBtn!=fullWidth.None else inline" class="d-grid gap-2">
+                    <ng-container *ngTemplateOutlet="buttons"></ng-container>
+                </div>
+                <ng-template #inline>
+                    <div class="d-flex flex-row" [ngClass]="buttonsAlign">
+                        <ng-container *ngTemplateOutlet="buttons"></ng-container>
+                    </div>
+                </ng-template>
             </div>
         </div>
     </div>
 </div>
 <ng-template #buttons>
     <ng-container *ngFor="let btn of config?.buttonSetting?.buttons">
-        <button class="btn btn-block margin" [ngClass]="[btnColor[btn.bgColor],'btn-'+size]"
+        <button class="btn btn-block margin" [ngClass]="[btnColor[btn.bgColor] ,size ]"
             [disabled]="isSubmit && btn.type==buttonType.Submit" type="button" (mousedown)="action(btn)">
             {{btn.caption}}
         </button>

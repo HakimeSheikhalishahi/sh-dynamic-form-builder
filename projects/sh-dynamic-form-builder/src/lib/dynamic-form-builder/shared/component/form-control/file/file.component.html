@@ -1,0 +1,2 @@
+<input class="form-control sh-w-control" [ngClass]="size && 'form-control-'+size"  [id]="field.id || ''" type="file" [style.width.px]="field?.width || '100%'" [multiple]="field.multipleFile"
+[name]="field.name" [formControl]="control" (change)="field?.onUpload($event.target)">

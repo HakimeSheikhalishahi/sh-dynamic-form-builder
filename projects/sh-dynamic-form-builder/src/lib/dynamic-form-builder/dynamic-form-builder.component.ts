@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { ButtonType } from './shared/enum/button-type.enum';
+import { FullWidth } from './shared/enum/full-width.enum';
 import { IButton } from './shared/model/button.interface';
 import { IFormConfig } from './shared/model/form-config.interface';
 import { IMainFieldItem } from './shared/model/main-field-item.interface';
@@ -17,6 +18,10 @@ export class DynamicFormBuilderComponent implements OnInit {
   @Input() config!: IFormConfig;
   @Input() formValue: any = {};
   @Input() isSubmit: boolean = false;
+  fullWidthBtn: string = 'none';
+  get fullWidth(){
+    return FullWidth;
+  }
   get btnColor() {
     return this.formService.btnColor;
   }
@@ -39,17 +44,26 @@ export class DynamicFormBuilderComponent implements OnInit {
   }
   private init(): void {
     this.formService.formControlConfig = this.config.formControlConfig || {};
-    this.size = this.formService.elementSize();
+    this.size = this.formService.elementSize() ? 'btn-' + this.formService.elementSize() : '';
+    if (this.config?.buttonSetting?.fullWidthButtons) {
+      this.fullWidthBtn = (this.config.buttonSetting.fullWidthButtons) || 'none';
+    }
     this.setBtnAlighn();
     this.setupForm();
   }
   private setupForm(): void {
     this.formGroup = new FormGroup({});
     this.config?.fields.forEach((x: IMainFieldItem, index: number) => {
-      if (x.type == 'form-array') {
-        this.setArray(x);
-      } else {
-        this.formService.setField(x, this.formGroup);
+      switch (x.type) {
+        case 'form-array':
+          this.setArray(x);
+          break;
+        case 'form-group':
+          this.setNestedFormGroup(x);
+          break;
+        default:
+          this.formService.setField(x, this.formGroup);
+          break;
       }
     })
     this.formGroup.patchValue(this.formValue);
@@ -66,6 +80,14 @@ export class DynamicFormBuilderComponent implements OnInit {
         break;
     }
   }
+  private setNestedFormGroup(field: IMainFieldItem) {
+    if (!field.formGroup?.fields) {
+      this.errorService.formGroupField(field.name);
+      return
+    }
+    const formGroup = this.formService.setFormGroup(field.formGroup?.fields);
+    this.formGroup.addControl(field.name, formGroup);
+  }
   setArray(field: IMainFieldItem) {
     this.formGroup.addControl(field.name, this.formBuilder.array([]));
     const fieldArray: any[] = this.formValue[field.name.toString()];
@@ -79,7 +101,7 @@ export class DynamicFormBuilderComponent implements OnInit {
     const formArray = this.formGroup?.get(field?.name) as FormArray;
     const formArrayField = field.formArray?.fields;
     if (formArrayField?.length) {
-      const form: FormGroup = this.formService.setArrayItem(formArrayField)
+      const form: FormGroup = this.formService.setFormGroup(formArrayField)
       formArray.push(form);
     } else {
       this.errorService.formArrayField(field.name);

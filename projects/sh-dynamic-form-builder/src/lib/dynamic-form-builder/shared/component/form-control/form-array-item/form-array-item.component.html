@@ -1,0 +1,10 @@
+<div class="form-group row">
+    <label class="form-label" [attr.for]="field?.label" [ngClass]="'col-form-label'+ (size && '-'+size)">
+        {{field?.label}}
+        <strong class="text-danger" *ngIf="required">*</strong>
+    </label>
+    <div>
+        <lib-basic-field [field]="field" [form]="form"></lib-basic-field>
+        <lib-validation-error [control]="control" [field]="field"></lib-validation-error>
+    </div>
+</div>

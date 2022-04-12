@@ -5,5 +5,6 @@ export interface IButtonSetting {
     buttons: IButton[],
     /**Usable when fullWidthButtons is false*/
     buttonsAlign?: 'left' | 'center' | 'right';
-    fullWidthButtons?: boolean;
+    /**Full width in all sizes or mobile only */
+    fullWidthButtons?: 'none' | 'all' | 'only-mobile';
 }

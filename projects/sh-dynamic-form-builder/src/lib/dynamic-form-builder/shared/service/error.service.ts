@@ -15,6 +15,10 @@ export class ErrorService {
     const msg = `${fieldName} doesn't have any field. please set value for FormArray Field`;
     this.show(msg);
   }
+  public formGroupField(fieldName: string): void {
+    const msg = `${fieldName} doesn't have any field. please set value for FormGroup Field`;
+    this.show(msg);
+  }
   public fileUpload(fieldName: string): void {
     const msg = `${fieldName} doesn't have onUpload method. please set it`;
     this.show(msg);

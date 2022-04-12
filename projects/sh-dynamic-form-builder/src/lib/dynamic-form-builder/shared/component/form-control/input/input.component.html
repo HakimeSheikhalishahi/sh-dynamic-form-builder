@@ -1,0 +1,6 @@
+<input *ngIf="!field?.multiline" class="form-control sh-w-control" [ngClass]="size && 'form-control-'+size" [id]="field.id || ''"
+    [attr.type]="field.type" [style.width.px]="field.width || '100%'" [name]="field.name"
+    [placeholder]="field.placeholder || ''" [formControl]="control">
+<textarea *ngIf="field.multiline" class="form-control sh-w-control" [ngClass]="size && 'form-control-'+size" [id]="field.id || ''"
+    [style.width.px]="field.width || '100%'" [name]="field.name" [formControl]="control" [rows]="field.rowCount || 5"
+    [placeholder]="field.placeholder || ''"></textarea>

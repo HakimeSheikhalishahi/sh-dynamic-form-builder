@@ -1,0 +1,37 @@
+<div class="form-group row" [formGroup]="form">
+    <label class="form-label sh-form-array-title" [ngClass]="['col-form-label' + (size && '-'+size) , field?.formArray?.titleClass || '']">
+        {{field?.label}}
+    </label>
+    <div class="col-12">
+        <div [formArrayName]="formArrayName">
+            <div *ngFor="let control of formArray.controls; let i=index">
+                <div [formGroupName]="i">
+                    <lib-divider *ngIf="!field?.formArray?.divider?.suppress" [divider]="field?.formArray?.divider!"
+                        [counter]="i">
+                    </lib-divider>
+                    <div class="text-end del-btn">
+                        <i class="bi bi-x-lg text-danger" aria-hidden="true" (click)="removeform(i)"></i>
+                    </div>
+                    <div class="form-group row">
+                        <ng-container *ngFor="let field of field.formArray?.fields">
+                            <div class="" [ngSwitch]="field?.type">
+                                <lib-form-array-item [field]="field" [form]="control"></lib-form-array-item>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button *ngIf="field.formArray?.simpleAddButton" class="btn mt-2" [ngClass]="[addButtonBgColor,(size && 'btn-'+size)]"
+    type="button" (mousedown)="addform()">
+    <i class="bi bi-plus"></i>
+</button>
+<button *ngIf="!field.formArray?.simpleAddButton" class="btn mt-2" type="button"
+    [ngClass]="[addButtonBgColor ,(size && 'btn-'+size)]" (mousedown)="addform()">
+    Add
+    <span *ngIf="formArray?.controls?.length"> more</span>
+    {{field?.label}}
+    <i class="bi bi-plus"></i>
+</button>

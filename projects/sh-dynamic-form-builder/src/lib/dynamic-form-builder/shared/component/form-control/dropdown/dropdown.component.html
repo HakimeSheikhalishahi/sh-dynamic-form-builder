@@ -1,0 +1,4 @@
+<select class="form-control sh-w-control" [ngClass]="size && 'form-control-'+size" [id]="field.id || ''"
+    [style.width.px]="field.width || '100%'" [name]="field.name" [formControl]="control">
+    <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.label}}</option>
+</select>

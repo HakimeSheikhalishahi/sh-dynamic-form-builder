@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IFieldItem } from '../model/field-item.interface';
 import { IFormArrayFieldItem } from '../model/form-array-field-item.interface';
 import { IFormControlConfig } from '../model/form-control-config.interface';
-import { IMainFieldItem } from '../model/main-field-item.interface';
+import { IFormGroupFieldItem } from '../model/form-group-field-item.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +24,7 @@ export class FormService {
     large: 'lg'
   }
   constructor() { }
-  setField(field: IMainFieldItem, formGroup: FormGroup) {
+  setField(field: IFieldItem, formGroup: FormGroup) {
     const validatorArr: any[] = [];
     field.validators?.forEach(val => {
       switch (val.rule) {
@@ -79,9 +80,9 @@ export class FormService {
     formGroup.addControl(field.name, ctrl);
     formGroup.get(field.name)?.updateValueAndValidity();
   }
-  setArrayItem(field: IFormArrayFieldItem[]): FormGroup {
+  setFormGroup(field: IFormArrayFieldItem[] | IFormGroupFieldItem[]): FormGroup {
     const formGroup: FormGroup = new FormGroup({});
-    field?.forEach((val: IFormArrayFieldItem) => {
+    field?.forEach((val: IFieldItem) => {
       this.setField(val, formGroup);
     });
     return formGroup;

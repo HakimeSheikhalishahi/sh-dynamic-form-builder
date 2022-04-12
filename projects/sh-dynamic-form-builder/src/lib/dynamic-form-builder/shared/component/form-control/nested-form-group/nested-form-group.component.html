@@ -1,0 +1,31 @@
+<div class="form-group row" [formGroup]="form">
+    <div [formGroupName]="field.name">
+        <ng-container *ngIf="!field.formGroup?.showInCard else card">
+            <label class="form-label sh-form-group-title"
+                [ngClass]="['col-form-label' + (size && '-'+size) , field?.formGroup?.titleClass || '']">
+                {{field?.label}}
+            </label>
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+        </ng-container>
+    </div>
+</div>
+<ng-template #card>
+    <div class="card">
+        <div class="card-header">
+            <label class="form-label sh-form-group-title py-0"
+                [ngClass]="['col-form-label' + (size && '-'+size) , field?.formGroup?.titleClass || '']">
+                {{field?.label}}
+            </label>
+        </div>
+        <div class="card-body">
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+        </div>
+    </div>
+</ng-template>
+<ng-template #content>
+    <ng-container *ngFor="let fieldItem of field.formGroup?.fields">
+        <div class="col-12">
+            <lib-nested-form-group-item [field]="fieldItem" [form]="nestedFormGroup"></lib-nested-form-group-item>
+        </div>
+    </ng-container>
+</ng-template>

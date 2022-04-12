@@ -1,0 +1,7 @@
+<div class="form-check" [class.form-check-inline]="field.inline" *ngFor="let opt of field?.options">
+    <label class="form-check-label  radio-inline">
+        <input class="form-check-input sh-w-control" [id]="field.id || ''" type="radio" [name]="field.name"
+            [formControl]="control" [value]="opt.key">
+        {{opt.label}}
+    </label>
+</div>

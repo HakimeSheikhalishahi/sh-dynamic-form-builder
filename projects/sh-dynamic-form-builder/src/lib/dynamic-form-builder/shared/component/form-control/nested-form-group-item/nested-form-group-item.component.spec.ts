@@ -1,25 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from "rxjs";
+import { NestedFormGroupItemComponent } from "./nested-form-group-item.component";
 
-import { NestedFormGroupItemComponent } from './nested-form-group-item.component';
-
-describe('NestedFormGroupItemComponent', () => {
+describe("NestedFormGroupItemComponent", () => {
   let component: NestedFormGroupItemComponent;
-  let fixture: ComponentFixture<NestedFormGroupItemComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ NestedFormGroupItemComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NestedFormGroupItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

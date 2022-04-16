@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RadioComponent } from './radio.component';
-import { ErrorService } from '../../shared/service/error.service';
+import { ErrorService } from '../../../service/error.service';
 
 describe('RadioComponent', () => {
   let component: RadioComponent;
@@ -22,16 +22,5 @@ describe('RadioComponent', () => {
 
   it('can load instance', () => {
     expect(component).toBeTruthy();
-  });
-
-  describe('ngOnInit', () => {
-    it('makes expected calls', () => {
-      const errorServiceStub: ErrorService = fixture.debugElement.injector.get(
-        ErrorService
-      );
-      spyOn(errorServiceStub, 'option').and.callThrough();
-      component.ngOnInit();
-      expect(errorServiceStub.option).toHaveBeenCalled();
-    });
   });
 });

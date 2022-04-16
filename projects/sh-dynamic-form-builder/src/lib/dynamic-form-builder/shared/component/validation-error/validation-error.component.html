@@ -1,4 +1,4 @@
-<ng-container *ngIf="field?.type!=='form-array' && !control.valid && (control.dirty || control.touched)">
+<ng-container *ngIf="field?.type!=='form-array' && !control?.valid && (control?.dirty || control?.touched)">
     <ng-container *ngIf="!simple else simpleError">
         <ng-container *ngTemplateOutlet="error"></ng-container>
     </ng-container>

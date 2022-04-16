@@ -1,7 +1,7 @@
 <h2 align="center">Reactive Form Builder for Angular</h2>
 
 <p align="center">
- generate form controls and form array.
+ Generate form controls, form array and form group.
  </p>
  
  ![todo](https://user-images.githubusercontent.com/51107856/162959789-21243f3c-e5ad-4bad-abf6-9fe602653c44.png?raw=true "Dynamic Form Builder")
@@ -109,7 +109,7 @@ export class AppModule {}
 ```json
 "styles": [
     "src/styles.scss",
-    "./node_modules/bootstrap/scss/bootstrap.scss",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css"
     "./node_modules/bootstrap-icons/font/bootstrap-icons.scss"
 ]
 ```

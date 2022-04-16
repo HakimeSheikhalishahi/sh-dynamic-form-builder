@@ -1,6 +1,6 @@
 {
   "name": "sh-dynamic-form-builder",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

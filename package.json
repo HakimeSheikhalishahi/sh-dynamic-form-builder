@@ -1,6 +1,6 @@
 {
   "name": "sh-dynamic-form-builder",
-  "version": "2.7.5",
+  "version": "2.7.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "rxjs": "~7.4.0",
+    "sh-ordinal-numbers": "^4.10.17",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

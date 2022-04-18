@@ -235,7 +235,7 @@ private onUpload(event: any): void {
 | ----------------------------------------- | -------------------- | ------- | --------- | --------------------------------------------------------------------------------------------------------------- |
 | [fields](#fields)                         | `IMainFieldItem`     | `-`     | yes       | Form fields                                                                                                     |
 | title                                     | `string`             | `-`     | no        | Form title                                                                                                      |
-| titleClass                                | `string`             | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class1 class1' |
+| titleClass                                | `string`             | `-`     | no        | Set style for form title, you can add one or more class name split by space. for example:'class1 class2 class3' |
 | [buttonSetting](#button-setting)          | `IButtonSetting`     | `{}`    | yes       | Button setting                                                                                                  |
 | [formControlConfig](#form-control-config) | `IFormControlConfig` | `{}`    | yes       | Form controls configuration                                                                                     |
 

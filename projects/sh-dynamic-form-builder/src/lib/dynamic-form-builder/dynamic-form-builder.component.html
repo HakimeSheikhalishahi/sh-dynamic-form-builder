@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="config">
     <div class="row">
         <div class="col">
             <h1 *ngIf="config?.title" [ngClass]="config?.titleClass || ''">{{config?.title}}</h1>

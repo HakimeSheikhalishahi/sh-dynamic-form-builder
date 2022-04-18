@@ -19,7 +19,7 @@ export class DynamicFormBuilderComponent implements OnInit {
   @Input() formValue: any = {};
   @Input() isSubmit: boolean = false;
   fullWidthBtn: string = 'none';
-  get fullWidth(){
+  get fullWidth() {
     return FullWidth;
   }
   get btnColor() {
@@ -43,6 +43,9 @@ export class DynamicFormBuilderComponent implements OnInit {
     this.init();
   }
   private init(): void {
+    if (!this.config) {
+      return;
+    }
     this.formService.formControlConfig = this.config.formControlConfig || {};
     this.size = this.formService.elementSize() ? 'btn-' + this.formService.elementSize() : '';
     if (this.config?.buttonSetting?.fullWidthButtons) {

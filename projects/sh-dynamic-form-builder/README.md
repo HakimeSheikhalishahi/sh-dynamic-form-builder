@@ -66,7 +66,6 @@ stackblitz
 - [Button setting](#button-setting)
 - [Validators](#validators)
 - [Creator](#creator)
-- [Donate](#donate)
 - [License](#license)
 
 # Install
@@ -383,12 +382,6 @@ private onUpload(event: any): void {
 - http://www.linkedin.com/in/hakime-sheikhalishahi
 - h.sheykhalishahi@gmail.com
 
-# Donate
-
-If you like my work and I save your time you can buy me a 🍺 or 🍕
-
-My Trust Wallet address | Ethereum :
-`0x04e125a00BCd45A4DD23279DcAfF1eAFd49DbEf6`
 
 # License
 
